@@ -8,8 +8,8 @@
       <a v-if="url !== ''" class="card-title" :href="url" target="_blank">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>
       <p class="card-subtitle">
-        <span>{{ jobTitle }}</span
-        ><i>{{ dates }}</i>
+        <span>{{ jobTitle }}</span>
+        <i>{{ dates }}</i>
       </p>
       <p class="location-text">{{ experience.location }}</p>
       <p class="description-text">{{ experience.description }}</p>
@@ -30,11 +30,11 @@ export default {
     company: function () {
       return this.experience.company;
     },
-    jobTitle: function () {
-      return this.experience.jobTitle;
-    },
     dates: function () {
-      return ', ' + this.experience.dates;
+      return this.experience.dates;
+    },
+    jobTitle: function () {
+      return this.experience.jobTitle + (this.dates ? ', ' : '');
     },
     location: function () {
       return this.experience.location;
