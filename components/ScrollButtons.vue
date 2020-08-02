@@ -27,29 +27,51 @@
 
 <script>
 export default {
+  data() {
+    return {
+      elements: [],
+      parent: null,
+    };
+  },
+  computed: {
+    topOfPage: function () {
+      return window.pageYOffset <= 0;
+    },
+    bottomOfPage: function () {
+      return (
+        Math.round(window.pageYOffset + window.innerHeight) >=
+        this.parent.offsetHeight
+      );
+    },
+  },
+  mounted() {
+    this.parent = document.getElementById('main-container');
+    this.elements = this.parent.children;
+  },
   methods: {
+    scrollTo: function (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    },
     scrollDown: function () {
-      const elements = document.getElementById('main-container').children;
+      if (this.bottomOfPage) {
+        return;
+      }
 
-      for (let i = 0; i < elements.length; ++i) {
-        if (elements[i].offsetTop > window.pageYOffset) {
-          console.log('going to element: ' + elements[i].id);
-          elements[i].scrollIntoView({ behavior: 'smooth' });
+      for (let i = 0; i < this.elements.length; ++i) {
+        if (this.elements[i].offsetTop > Math.round(window.pageYOffset)) {
+          this.scrollTo(this.elements[i]);
           break;
         }
       }
-
-      // currentEl.previousElementSibling.scrollIntoView({
-      //   behavior: 'smooth',
-      // });
     },
     scrollUp: function () {
-      const elements = document.getElementById('main-container').children;
+      if (this.topOfPage) {
+        return;
+      }
 
-      for (let i = elements.length - 1; i >= 0; --i) {
-        if (elements[i].offsetTop < window.pageYOffset) {
-          console.log('going to element: ' + elements[i].id);
-          elements[i].scrollIntoView({ behavior: 'smooth' });
+      for (let i = this.elements.length - 1; i >= 0; --i) {
+        if (this.elements[i].offsetTop < Math.round(window.pageYOffset)) {
+          this.scrollTo(this.elements[i]);
           break;
         }
       }
