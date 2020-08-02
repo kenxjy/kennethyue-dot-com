@@ -1,5 +1,5 @@
 <template>
-  <div class="button-container">
+  <div class="button-container" v-scrollanimation>
     <button class="button up-button" @click="scrollUp()">
       <svg
         class="button-arrow"
@@ -107,5 +107,15 @@ export default {
 .button-arrow {
   height: 100%;
   width: 100%;
+}
+
+.aos-enter {
+  opacity: 0;
+  transform: none;
+}
+
+.aos-enter-to {
+  opacity: 1;
+  transition: all 1s ease-out;
 }
 </style>
