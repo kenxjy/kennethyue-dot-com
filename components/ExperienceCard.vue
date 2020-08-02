@@ -5,7 +5,8 @@
       src="https://avatars3.githubusercontent.com/u/43609718?s=460&u=0b367126ab4d8861419a17866491fc3ba871e6d1&v=4"
     />
     <div class="card-info">
-      <h3 class="card-title">{{ company }}</h3>
+      <a v-if="url !== ''" class="card-title" :href="url" target="_blank">{{ company }}</a>
+      <span v-else class="card-title">{{ company }}</span>
       <p class="card-subtitle">
         <span>{{ jobTitle }}</span
         ><i>{{ dates }}</i>
@@ -73,6 +74,15 @@ export default {
   max-width: 100%;
   margin-top: 0;
   color: rgb(0, 187, 255);
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
 }
 
 .card-subtitle {
