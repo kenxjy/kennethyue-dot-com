@@ -1,8 +1,8 @@
 <template>
   <div id="home-page-header" :style="{ color: color }" v-scrollanimation>
     <i>Hi, I'm</i>
-    <SectionTitle v-bind:color="color">
-      <span class="title">{{ name }}</span>
+    <SectionTitle class="title" v-bind:color="color">
+      {{ name }}
     </SectionTitle>
   </div>
 </template>
@@ -29,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+i {
+  margin-bottom: 0.25rem;
+}
+
 #home-page-header {
   width: 100vw;
   height: 100vh;

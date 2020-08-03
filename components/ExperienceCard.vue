@@ -70,7 +70,7 @@ export default {
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   max-width: 100%;
   margin-top: 0;
   color: rgb(0, 187, 255);
