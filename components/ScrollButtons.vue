@@ -130,7 +130,14 @@ export default {
   background-color: #444;
   border: none;
   border-radius: 5px;
-  color: white;
+}
+
+.button svg {
+  fill: white;
+}
+
+.button:hover svg {
+  fill: aqua;
 }
 
 .button-arrow {
