@@ -31,7 +31,8 @@ export default {
     return {
       elements: [],
       parentElement: null,
-      activeScroll: null,
+      activeScrollInterval: null,
+      activeScrollDestination: null,
       yOffsetBuffer: 50,
       scrollInterval: 16.67 // ~60 fps
     };
@@ -50,16 +51,26 @@ export default {
         this.parentElement.offsetHeight
       );
     },
+    getActiveScrollPosition: function () {
+      return this.activeScrollDestination !== null
+        ? this.activeScrollDestination
+        : window.pageYOffset;
+    },
+    clearActiveScrollInterval: function () {
+      window.clearInterval(this.activeScrollInterval);
+      this.activeScrollInterval = null;
+      this.activeScrollDestination = null;
+    },
     scrollTo: function (el, ms = 750) {
-      if (this.activeScroll) {
-        return;
+      if (this.activeScrollInterval) {
+        this.clearActiveScrollInterval();
       }
 
       const numOfSteps = Math.round(ms / this.scrollInterval);
 
       const currentPosition = window.pageYOffset;
-      const finalPosition = el.offsetTop;
-      const travelDistance = finalPosition - currentPosition;
+      this.activeScrollDestination = el.offsetTop;
+      const travelDistance = this.activeScrollDestination - currentPosition;
 
       const distanceCurve = function (step) {
         return (
@@ -70,14 +81,13 @@ export default {
       };
 
       let currentStep = 0;
-      this.activeScroll = window.setInterval(() => {
+      this.activeScrollInterval = window.setInterval(() => {
         ++currentStep;
         window.scrollTo(0, currentPosition + distanceCurve(currentStep));
 
         if (currentStep >= numOfSteps) {
-          window.clearInterval(this.activeScroll);
+          this.clearActiveScrollInterval();
           window.scrollTo(0, el.offsetTop + 1);
-          this.activeScroll = null;
         }
       }, this.scrollInterval);
     },
@@ -87,8 +97,7 @@ export default {
       }
 
       for (let i = 0; i < this.elements.length; ++i) {
-        if (this.elements[i].offsetTop > window.pageYOffset + this.yOffsetBuffer) {
-          this.scrollTo(this.elements[i]);
+        if (this.elements[i].offsetTop > this.getActiveScrollPosition() + this.yOffsetBuffer) {
           break;
         }
       }
@@ -99,8 +108,7 @@ export default {
       }
 
       for (let i = this.elements.length - 1; i >= 0; --i) {
-        if (this.elements[i].offsetTop < window.pageYOffset - this.yOffsetBuffer) {
-          this.scrollTo(this.elements[i]);
+        if (this.elements[i].offsetTop < this.getActiveScrollPosition() - this.yOffsetBuffer) {
           break;
         }
       }
