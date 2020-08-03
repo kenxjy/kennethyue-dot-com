@@ -127,7 +127,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  background-color: #444; /* Green */
+  background-color: #444;
   border: none;
   border-radius: 5px;
   color: white;
