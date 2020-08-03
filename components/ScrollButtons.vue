@@ -83,7 +83,6 @@ export default {
     },
     scrollDown: function () {
       if (this.isBottomOfPage()) {
-        console.log('bottom of page');
         return;
       }
 
