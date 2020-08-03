@@ -30,47 +30,81 @@ export default {
   data() {
     return {
       elements: [],
-      parent: null,
+      parentElement: null,
+      activeScroll: null,
+      yOffsetBuffer: 50,
+      scrollInterval: 16.67 // ~60 fps
     };
   },
-  computed: {
-    topOfPage: function () {
-      return window.pageYOffset <= 0;
-    },
-    bottomOfPage: function () {
-      return (
-        Math.round(window.pageYOffset + window.innerHeight) >=
-        this.parent.offsetHeight
-      );
-    },
-  },
   mounted() {
-    this.parent = document.getElementById('main-container');
-    this.elements = this.parent.children;
+    this.parentElement = document.getElementById('main-container');
+    this.elements = this.parentElement.children;
   },
   methods: {
-    scrollTo: function (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    isTopOfPage: function () {
+      return window.pageYOffset <= 0;
+    },
+    isBottomOfPage: function () {
+      return (
+        window.pageYOffset + window.innerHeight >=
+        this.parentElement.offsetHeight
+      );
+    },
+    scrollTo: function (el, ms = 750) {
+      if (this.activeScroll) {
+        return;
+      }
+
+      const numOfSteps = Math.round(ms / this.scrollInterval);
+
+      const currentPosition = window.pageYOffset;
+      const finalPosition = el.offsetTop;
+      const travelDistance = finalPosition - currentPosition;
+
+      const distanceCurve = function (step) {
+        // quadratic curve
+        return (
+          (-travelDistance / (-numOfSteps * -numOfSteps)) *
+            ((step - numOfSteps) * (step - numOfSteps)) +
+          travelDistance
+        );
+
+        // linear curve
+        // return (travelDistance / numOfSteps) * step;
+      };
+
+      let currentStep = 0;
+      this.activeScroll = window.setInterval(() => {
+        ++currentStep;
+        window.scrollTo(0, currentPosition + distanceCurve(currentStep));
+
+        if (currentStep >= numOfSteps) {
+          window.clearInterval(this.activeScroll);
+          window.scrollTo(0, el.offsetTop + 1);
+          this.activeScroll = null;
+        }
+      }, this.scrollInterval);
     },
     scrollDown: function () {
-      if (this.bottomOfPage) {
+      if (this.isBottomOfPage()) {
+        console.log('bottom of page');
         return;
       }
 
       for (let i = 0; i < this.elements.length; ++i) {
-        if (this.elements[i].offsetTop > Math.round(window.pageYOffset)) {
+        if (this.elements[i].offsetTop > window.pageYOffset + this.yOffsetBuffer) {
           this.scrollTo(this.elements[i]);
           break;
         }
       }
     },
     scrollUp: function () {
-      if (this.topOfPage) {
+      if (this.isTopOfPage()) {
         return;
       }
 
       for (let i = this.elements.length - 1; i >= 0; --i) {
-        if (this.elements[i].offsetTop < Math.round(window.pageYOffset)) {
+        if (this.elements[i].offsetTop < window.pageYOffset - this.yOffsetBuffer) {
           this.scrollTo(this.elements[i]);
           break;
         }
