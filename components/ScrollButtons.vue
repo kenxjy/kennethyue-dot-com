@@ -34,7 +34,7 @@ export default {
       activeScrollInterval: null,
       activeScrollDestination: null,
       yOffsetBuffer: 50,
-      scrollInterval: 16.67 // ~60 fps
+      scrollInterval: 16.67, // ~60 fps
     };
   },
   mounted() {
@@ -61,7 +61,7 @@ export default {
       this.activeScrollInterval = null;
       this.activeScrollDestination = null;
     },
-    scrollTo: function (el, ms = 750) {
+    scrollToElement: function (el, ms = 750) {
       if (this.activeScrollInterval) {
         this.clearActiveScrollInterval();
       }
@@ -98,6 +98,7 @@ export default {
 
       for (let i = 0; i < this.elements.length; ++i) {
         if (this.elements[i].offsetTop > this.getActiveScrollPosition() + this.yOffsetBuffer) {
+          this.scrollToElement(this.elements[i]);
           break;
         }
       }
@@ -109,6 +110,7 @@ export default {
 
       for (let i = this.elements.length - 1; i >= 0; --i) {
         if (this.elements[i].offsetTop < this.getActiveScrollPosition() - this.yOffsetBuffer) {
+          this.scrollToElement(this.elements[i]);
           break;
         }
       }
