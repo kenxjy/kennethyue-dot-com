@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     isTopOfPage: function () {
-      return window.pageYOffset <= 0;
+      return window.pageYOffset <= 1;
     },
     isBottomOfPage: function () {
       return (
