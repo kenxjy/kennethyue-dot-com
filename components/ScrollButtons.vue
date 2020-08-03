@@ -62,15 +62,11 @@ export default {
       const travelDistance = finalPosition - currentPosition;
 
       const distanceCurve = function (step) {
-        // quadratic curve
         return (
           (-travelDistance / (-numOfSteps * -numOfSteps)) *
             ((step - numOfSteps) * (step - numOfSteps)) +
           travelDistance
         );
-
-        // linear curve
-        // return (travelDistance / numOfSteps) * step;
       };
 
       let currentStep = 0;
