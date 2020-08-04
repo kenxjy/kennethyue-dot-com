@@ -1,8 +1,6 @@
 <template>
-  <div class="section-title">
-    <div class="section-title-text" :style="cssVars">
-      <slot></slot>
-    </div>
+  <div class="section-title" :style="cssVars">
+    <slot></slot>
   </div>
 </template>
 
@@ -25,43 +23,45 @@ export default {
 </script>
 
 <style scoped>
-.section-title-text {
+.section-title {
   width: max-content;
   position: relative;
   color: var(--color);
   text-align: center;
+  font-size: 28px;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .section-title-text::before,
-  .section-title-text::after {
+  .section-title::before,
+  .section-title::after {
     background-color: var(--color);
     content: ' ';
     position: absolute;
     top: 48%;
     width: 80px;
-    height: 2px;
+    height: 1px;
     margin: 0 10px;
     display: inline-block;
   }
 
-  .section-title-text::before {
+  .section-title::before {
     right: 100%;
   }
 
-  .section-title-text::after {
+  .section-title::after {
     left: 100%;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .section-title-text::after {
+  .section-title::after {
     background-color: var(--color);
     content: ' ';
     position: absolute;
     bottom: -0.4rem;
     width: 100px;
-    height: 2px;
+    height: 1px;
     display: inline-block;
     left: calc(50% - 50px);
   }
