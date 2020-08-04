@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return require('../assets/icons/' + this.src);
+      return '/icons/' + this.src;
     },
   },
 };
