@@ -56,7 +56,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/animateOnScroll.js'],
+  plugins: ['@/plugins/animateOnScroll.js', '@/plugins/data.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
