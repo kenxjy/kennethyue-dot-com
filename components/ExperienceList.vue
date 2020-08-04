@@ -1,5 +1,5 @@
 <template>
-  <SectionContainer id="experience-list" section-title="My work so far">
+  <SectionContainer id="experience-list" v-bind:section-title="sectionTitle">
     <ExperienceCard
       class="experience-card"
       v-scrollanimation
@@ -21,6 +21,7 @@ export default {
   },
   name: 'ExperienceList',
   props: {
+    sectionTitle: String,
     experiences: {
       type: Array,
       required: true,
