@@ -1,7 +1,7 @@
 <template>
   <div id="home-page-header" :style="{ color: color }" v-scrollanimation>
-    <SectionTitle class="title" v-bind:color="color">
-      {{ name }}
+    <SectionTitle  v-bind:color="color">
+      <span class="title">{{ name }}</span>
     </SectionTitle>
   </div>
 </template>
