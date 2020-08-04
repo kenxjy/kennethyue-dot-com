@@ -1,7 +1,7 @@
 <template>
-  <div id="home-page-header" :style="{ color: color }" v-scrollanimation>
-    <SectionTitle  v-bind:color="color">
-      <span class="title">{{ name }}</span>
+  <div id="home-page-header" v-scrollanimation>
+    <SectionTitle class="section-title" v-bind:color="color">
+     {{ name }}
     </SectionTitle>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'red',
+      default: 'white',
     },
   },
 };
@@ -42,7 +42,13 @@ i {
   background: #333;
 }
 
-.title {
+.section-title {
   font-size: 40px;
+  color: white !important;
+}
+
+.section-title::before,
+.section-title::after {
+  background-color: white !important;
 }
 </style>
