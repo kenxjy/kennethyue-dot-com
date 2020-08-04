@@ -41,7 +41,7 @@ export default {
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-icon-180x180.png'},
       { ref: 'manifest', href: '/manifest.json' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap' },
     ],
     script: [
       {
