@@ -39,4 +39,30 @@ export default {
       imgUrl: '',
     },
   ],
+  projects: [
+    {
+      company: 'My Personal Website',
+      description: 
+        'When I was making my personal website, I decided that rather than using any existing ' + 
+        'all-in-one website builder solution, such as Squarespace or Wix, I wanted to take the ' +
+        'opportunity to learn a new framework. I chose to learn Vue.js and Nuxt.js.\n\n' +
+        'Coming from an Angular background, the experience working with Vue.js and Nuxt.js ' +
+        'was very refreshing and enjoyable. While I do prefer working with TypeScript over ' +
+        'JavaScript, perhaps it could be a future project to convert this application to TypeScript! 😄',
+      url: 'https://github.com/kenxjy/personal-website',
+      imgUrl: '',
+    },
+    {
+      company: 'WhatsApp Electron',
+      description: 
+        'This is just a simple Electron application that wraps WhatsApp Web.\n\n' +
+        'My family and I typically use WhatsApp as our method of communication. I also use Linux Mint as ' +
+        'my daily OS on my home computer. Unfortunately, WhatsApp does not support Linux for it\'s desktop clients. ' +
+        'I could of easily downloaded an existing unofficial Electron-wrapped WhatsApp, but I decided to take ' +
+        'the opportunity to learn a little bit about Electron, while getting a desktop client of WhatsApp.\n\n' +
+        'Two birds with one stone!',
+      url: 'https://github.com/kenxjy/whatsapp-electron',
+      imgUrl: '',
+    },
+  ]
 };

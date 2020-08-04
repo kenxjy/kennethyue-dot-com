@@ -3,7 +3,8 @@
     <ScrollButtons />
     <div class="container" id="main-container">
       <HomePageHeader name="Kenneth Yue" color="white" />
-      <ExperienceList v-bind:experiences="experience" />
+      <ExperienceList section-title="My work so far" v-bind:experiences="experience" />
+      <ExperienceList section-title="My personal projects" v-bind:experiences="projects" />
       <HomePageFooter />
     </div>
   </div>
