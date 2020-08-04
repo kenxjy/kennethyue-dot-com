@@ -30,6 +30,7 @@ export default {
   text-align: center;
   font-size: 28px;
   margin-bottom: 2rem;
+  font-family: 'Josefin Sans', Verdana, Helvetica, Tahoma, sans-serif;
 }
 
 @media only screen and (min-width: 768px) {

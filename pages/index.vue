@@ -24,13 +24,16 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 html,
 body {
   color: #333;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Josefin Sans', Verdana, Helvetica, Tahoma, sans-serif;
+  font-family: 'Roboto', Verdana, Helvetica, Tahoma, sans-serif;
 }
 
 .container {

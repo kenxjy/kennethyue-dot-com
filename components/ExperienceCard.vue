@@ -97,5 +97,6 @@ a:hover {
 
 .description-text {
   white-space: pre-wrap;
+  font-weight: 300;
 }
 </style>

@@ -18,12 +18,10 @@ export default {
 
 <style scoped>
 .section-container {
-  padding: 75px 1rem;
+  padding: 50px 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-}
-
-.title {
-  font-size: 28px;
-  margin-bottom: 2rem;
 }
 </style>
