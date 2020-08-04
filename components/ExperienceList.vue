@@ -1,6 +1,5 @@
 <template>
-  <div id="experience-list">
-    <SectionTitle class="title" v-scrollanimation>My work so far</SectionTitle>
+  <SectionContainer id="experience-list" section-title="My work so far">
     <ExperienceCard
       class="experience-card"
       v-scrollanimation
@@ -8,7 +7,7 @@
       :key="index"
       :experience="item"
     />
-  </div>
+  </SectionContainer>
 </template>
 
 <script>
@@ -31,18 +30,6 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  margin-bottom: 2rem;
-}
-
-#experience-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  padding-top: 75px;
-}
-
 .experience-card {
   margin-bottom: 2rem;
   width: 100%;

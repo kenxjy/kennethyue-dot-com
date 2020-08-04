@@ -1,22 +1,22 @@
 <template>
-  <div id="home-page-footer">
-    <SectionTitle v-scrollanimation>
+  <SectionContainer id="home-page-footer">
+    <template v-slot:section-title>
       <div class="title">{{ text }}</div>
-    </SectionTitle>
+    </template>
     <span class="subtitle" v-scrollanimation>Let's connect!</span>
     <div class="icon-container" v-scrollanimation>
       <IconLink href="mailto:kenneth@kennethyue.com" src="email.png" />
       <IconLink href="https://linkedin.com/in/kenxjy" src="linkedin.png" />
       <IconLink href="https://github.com/kenxjy" src="github.png" />
     </div>
-  </div>
+  </SectionContainer>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      text: `Toronto-based\nsoftware developer\nwith a passion for technology`,
+      text: `Toronto-based\nSoftware Developer\nwith a passion for technology`,
     };
   },
 };
@@ -24,11 +24,6 @@ export default {
 
 <style scoped>
 #home-page-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 3rem;
   margin-bottom: 10rem;
 }
 
@@ -44,8 +39,6 @@ export default {
 }
 
 .title {
-  font-size: 21px;
-  margin-bottom: 2rem;
   white-space: pre-wrap;
 }
 
