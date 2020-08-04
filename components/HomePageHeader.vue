@@ -1,6 +1,5 @@
 <template>
   <div id="home-page-header" :style="{ color: color }" v-scrollanimation>
-    <i>Hi, I'm</i>
     <SectionTitle class="title" v-bind:color="color">
       {{ name }}
     </SectionTitle>

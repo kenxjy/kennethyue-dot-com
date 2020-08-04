@@ -6,8 +6,8 @@
     <span class="subtitle" v-scrollanimation>Let's connect!</span>
     <div class="icon-container" v-scrollanimation>
       <IconLink href="mailto:kenneth@kennethyue.com" src="email.png" />
-      <IconLink href="https://linkedin.com/in/kenxjy" src="linkedin2.png" />
-      <IconLink href="https://github.com/kenxjy" src="github2.png" />
+      <IconLink href="https://linkedin.com/in/kenxjy" src="linkedin.png" />
+      <IconLink href="https://github.com/kenxjy" src="github.png" />
     </div>
   </div>
 </template>
