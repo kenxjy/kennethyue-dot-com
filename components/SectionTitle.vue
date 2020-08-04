@@ -26,17 +26,18 @@ export default {
 .section-title {
   width: max-content;
   position: relative;
-  color: var(--color);
+  color: var(--color, white);
   text-align: center;
   font-size: 28px;
   margin-bottom: 2rem;
   font-family: 'Josefin Sans', Verdana, Helvetica, Tahoma, sans-serif;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
   .section-title::before,
   .section-title::after {
-    background-color: var(--color);
+    background-color: var(--color, white);
     content: ' ';
     position: absolute;
     top: 48%;
