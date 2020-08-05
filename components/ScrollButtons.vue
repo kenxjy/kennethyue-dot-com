@@ -26,16 +26,15 @@
 </template>
 
 <script>
+import SmoothScroll from '../plugins/smoothScroll';
+
 export default {
   name: 'ScrollButtons',
   data() {
     return {
       elements: [],
       parentElement: null,
-      activeScrollInterval: null,
-      activeScrollDestination: null,
       yOffsetBuffer: 50,
-      scrollInterval: 16.67, // ~60 fps
     };
   },
   mounted() {
@@ -52,54 +51,17 @@ export default {
         this.parentElement.offsetHeight
       );
     },
-    getActiveScrollPosition: function () {
-      return this.activeScrollDestination !== null
-        ? this.activeScrollDestination
-        : window.pageYOffset;
-    },
-    clearActiveScrollInterval: function () {
-      window.clearInterval(this.activeScrollInterval);
-      this.activeScrollInterval = null;
-      this.activeScrollDestination = null;
-    },
-    scrollToElement: function (el, ms = 750) {
-      if (this.activeScrollInterval) {
-        this.clearActiveScrollInterval();
-      }
-
-      const numOfSteps = Math.round(ms / this.scrollInterval);
-
-      const currentPosition = window.pageYOffset;
-      this.activeScrollDestination = el.offsetTop;
-      const travelDistance = this.activeScrollDestination - currentPosition;
-
-      const distanceCurve = function (step) {
-        return (
-          (-travelDistance / (-numOfSteps * -numOfSteps)) *
-            ((step - numOfSteps) * (step - numOfSteps)) +
-          travelDistance
-        );
-      };
-
-      let currentStep = 0;
-      this.activeScrollInterval = window.setInterval(() => {
-        ++currentStep;
-        window.scrollTo(0, currentPosition + distanceCurve(currentStep));
-
-        if (currentStep >= numOfSteps) {
-          this.clearActiveScrollInterval();
-          window.scrollTo(0, el.offsetTop + (el.offsetTop === 0 ? 0 : 1));
-        }
-      }, this.scrollInterval);
-    },
     scrollDown: function () {
       if (this.isBottomOfPage()) {
         return;
       }
 
       for (let i = 0; i < this.elements.length; ++i) {
-        if (this.elements[i].offsetTop > this.getActiveScrollPosition() + this.yOffsetBuffer) {
-          this.scrollToElement(this.elements[i]);
+        if (
+          this.elements[i].offsetTop >
+          SmoothScroll.getActiveScrollPosition() + this.yOffsetBuffer
+        ) {
+          SmoothScroll.scrollTo(this.elements[i].offsetTop);
           break;
         }
       }
@@ -110,8 +72,11 @@ export default {
       }
 
       for (let i = this.elements.length - 1; i >= 0; --i) {
-        if (this.elements[i].offsetTop < this.getActiveScrollPosition() - this.yOffsetBuffer) {
-          this.scrollToElement(this.elements[i]);
+        if (
+          this.elements[i].offsetTop <
+          SmoothScroll.getActiveScrollPosition() - this.yOffsetBuffer
+        ) {
+          SmoothScroll.scrollTo(this.elements[i].offsetTop);
           break;
         }
       }
