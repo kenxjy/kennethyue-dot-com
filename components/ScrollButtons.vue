@@ -88,7 +88,7 @@ export default {
 
         if (currentStep >= numOfSteps) {
           this.clearActiveScrollInterval();
-          window.scrollTo(0, el.offsetTop + 1);
+          window.scrollTo(0, el.offsetTop + (el.offsetTop === 0 ? 0 : 1));
         }
       }, this.scrollInterval);
     },
