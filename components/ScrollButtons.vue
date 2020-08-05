@@ -125,22 +125,37 @@ export default {
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1.25rem;
+  right: 1.4rem;
 }
 
 .button {
-  height: 34px;
-  width: 34px;
-  margin: 3px;
+  height: 38px;
+  width: 38px;
+  margin: 4px 0;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   background-color: #444;
   border: none;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .button {
+    height: 45px;
+    width: 45px;
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .button {
+    height: 48px;
+    width: 48px;
+    padding: 6px;
+  }
 }
 
 .button svg {
