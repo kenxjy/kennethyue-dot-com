@@ -1,27 +1,7 @@
 <template>
   <div class="button-container">
-    <button class="button up-button" @click="scrollUp()">
-      <svg
-        class="button-arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="white"
-      >
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
-      </svg>
-    </button>
-    <button class="button down-button" @click="scrollDown()">
-      <svg
-        class="button-arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="white"
-      >
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-      </svg>
-    </button>
+    <ScrollButton class="button up-button" v-on:clicked="scrollUp()" />
+    <ScrollButton class="button down-button" down v-on:clicked="scrollDown()" />
   </div>
 </template>
 
@@ -99,40 +79,5 @@ export default {
   width: 38px;
   margin: 4px 0;
   padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #444;
-  border: none;
-  border-radius: 5px;
-}
-
-@media only screen and (max-width: 768px) {
-  .button {
-    height: 45px;
-    width: 45px;
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .button {
-    height: 48px;
-    width: 48px;
-    padding: 6px;
-  }
-}
-
-.button svg {
-  fill: white;
-}
-
-.button:hover svg {
-  fill: aqua;
-}
-
-.button-arrow {
-  height: 100%;
-  width: 100%;
 }
 </style>
