@@ -2,7 +2,8 @@
   <div class="card">
     <img
       class="card-img"
-      src="https://avatars3.githubusercontent.com/u/43609718?s=460&u=0b367126ab4d8861419a17866491fc3ba871e6d1&v=4"
+      src="/images/image-placeholder.png"
+      alt="image"
     />
     <div class="card-info">
       <a v-if="url !== ''" class="card-title" :href="url" target="_blank">{{ company }}</a>
@@ -65,6 +66,7 @@ export default {
   height: 250px;
   width: 300px;
   margin-bottom: 1.5rem;
+  border-radius: 15px;
 }
 
 .card-info {

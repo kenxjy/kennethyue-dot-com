@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'SectionTitle',
   props: {
     color: {
       type: String,

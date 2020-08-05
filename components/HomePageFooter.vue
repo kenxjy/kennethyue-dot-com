@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'HomePageFooter',
   data() {
     return {
       text: `Toronto-based\nSoftware Developer\nwith a passion for technology`,

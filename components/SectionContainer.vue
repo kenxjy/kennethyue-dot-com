@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'SectionContainer',
   props: {
     sectionTitle: String,
   },
