@@ -27,6 +27,7 @@
 
 <script>
 export default {
+  name: 'ScrollButtons',
   data() {
     return {
       elements: [],
