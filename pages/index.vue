@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ScrollButtons />
+    <ScrollButtonContainer />
     <div class="container" id="main-container">
       <HomePageHeader name="Kenneth Yue" />
       <ExperienceList section-title="My work so far" v-bind:experiences="experience" />
@@ -18,8 +18,8 @@ export default {
     window.scrollTo(0, 0);
   },
   data() {
-    return SITE_DATA
-  }
+    return SITE_DATA;
+  },
 };
 </script>
 
