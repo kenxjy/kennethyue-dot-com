@@ -57,7 +57,7 @@ export default {
       description: 
         'This is just a simple Electron application that wraps WhatsApp Web.\n\n' +
         'My family and I typically use WhatsApp as our method of communication. I also use Linux Mint as ' +
-        'my daily OS on my home computer. Unfortunately, WhatsApp does not support Linux for it\'s desktop clients. ' +
+        'my daily OS on my home computer. Unfortunately, WhatsApp does not support Linux for its desktop clients. ' +
         'I could of easily downloaded an existing unofficial Electron-wrapped WhatsApp, but I decided to take ' +
         'the opportunity to learn a little bit about Electron, while getting a desktop client of WhatsApp.\n\n' +
         'Two birds with one stone!',
