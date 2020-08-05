@@ -18,6 +18,11 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+}
+
 .section-container {
   padding: 50px 1rem 0;
   display: flex;

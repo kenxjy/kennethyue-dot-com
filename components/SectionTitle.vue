@@ -29,8 +29,6 @@ export default {
   position: relative;
   color: var(--color, #333);
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 2rem;
   font-family: 'Josefin Sans', Verdana, Helvetica, Tahoma, sans-serif;
   font-weight: bold;
   overflow-wrap: break-word;
