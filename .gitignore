@@ -92,4 +92,3 @@ sw.*
 # Firebase files
 .firebase/
 .firebaserc
-firebase.json
