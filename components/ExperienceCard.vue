@@ -6,7 +6,7 @@
       alt="image"
     />
     <div class="card-info">
-      <a v-if="url !== ''" class="card-title" :href="url" target="_blank">{{ company }}</a>
+      <a v-if="url" class="card-title" :href="url" target="_blank">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>
       <p class="card-subtitle" v-if="jobTitle">
         <span>{{ jobTitle }}</span>
