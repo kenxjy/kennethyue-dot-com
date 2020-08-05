@@ -72,6 +72,15 @@ export default {
   border-radius: 15px;
 }
 
+@media only screen and (max-width: 575px) {
+  .card-img {
+    width: 100%;
+    height: initial;
+    margin: 0 1rem 1.5rem;
+  }
+}
+
+
 .card-info {
   width: 500px;
   max-width: 100%;

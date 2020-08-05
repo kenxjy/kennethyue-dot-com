@@ -42,7 +42,7 @@ export default {
     content: ' ';
     position: absolute;
     
-    width: 120px;
+    width: 54%;
     height: 1px;
     display: inline-block;
   }
