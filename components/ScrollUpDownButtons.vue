@@ -9,7 +9,7 @@
 import SmoothScroll from '../plugins/smoothScroll';
 
 export default {
-  name: 'ScrollButtons',
+  name: 'ScrollUpDownButtons',
   data() {
     return {
       elements: [],
