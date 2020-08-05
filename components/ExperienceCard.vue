@@ -2,7 +2,7 @@
   <div class="card">
     <img
       class="card-img"
-      src="/images/image-placeholder.png"
+      :src="imgUrl"
       alt="image"
     />
     <div class="card-info">
@@ -50,6 +50,9 @@ export default {
     url: function () {
       return this.experience.url;
     },
+    imgUrl() {
+      return this.experience.imgUrl || '/images/image-placeholder.png' ;
+    }
   },
 };
 </script>
