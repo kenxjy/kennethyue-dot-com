@@ -1,9 +1,9 @@
 <template>
   <div class="section-container">
     <SectionTitle v-if="sectionTitle" class="title" v-scrollanimation>{{ sectionTitle }}</SectionTitle>
-    <SectionTitle v-else class="title" v-scrollanimation>
-      <slot name="section-title">Section Title</slot>
-    </SectionTitle>
+    <slot v-else name="section-title">
+      <SectionTitle class="title" v-scrollanimation>Section Title</SectionTitle>
+    </slot>
     <slot></slot>
   </div>
 </template>
