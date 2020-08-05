@@ -41,28 +41,29 @@ export default {
     background-color: var(--color, #333);
     content: ' ';
     position: absolute;
-    top: 48%;
-    width: 80px;
+    
+    width: 120px;
     height: 1px;
-    margin: 0 10px;
     display: inline-block;
   }
 
   .section-title::before {
-    right: 100%;
+    top: -0.8rem;
+    left: 0%
   }
 
   .section-title::after {
-    left: 100%;
+    bottom: -0.5rem;
+    right: 0%;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .section-title::after {
+  .section-title::before {
     background-color: var(--color);
     content: ' ';
     position: absolute;
-    bottom: -0.4rem;
+    bottom: -0.5rem;
     width: 100px;
     height: 1px;
     display: inline-block;
