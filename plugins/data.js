@@ -35,10 +35,10 @@ export default {
         'My years at Seneca College really helped me realise and pursue my interests. ' + 
         'Ever since I was little, I have always been interested in three things, technology, learning and puzzles. ' +
         'Seneca showed me how to begin stretching my legs, and I started to push beyond the cirriculum to quench ' +
-        'my thirst for knowledge. Personally, I think there is no greater feeling to take what you have learned and ' +
-        'apply that knowledge to create a solution to solve puzzles and problems, no matter how big or small.',
+        'my thirst for knowledge. Personally, I think there is no greater feeling than to take what you have learned and ' +
+        'apply that knowledge to create a solution to a puzzle or problem, no matter how big or small.',
       url: '',
-      imgUrl: '',
+      imgUrl: '/images/seneca-college.jpg',
     },
   ],
   projects: [
