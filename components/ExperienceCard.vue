@@ -2,11 +2,11 @@
   <div class="card">
     <img
       class="card-img"
-      src="/images/image-placeholder.png"
+      :src="imgUrl"
       alt="image"
     />
     <div class="card-info">
-      <a v-if="url !== ''" class="card-title" :href="url" target="_blank">{{ company }}</a>
+      <a v-if="url" class="card-title" :href="url" target="_blank">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>
       <p class="card-subtitle" v-if="jobTitle">
         <span>{{ jobTitle }}</span>
@@ -50,6 +50,9 @@ export default {
     url: function () {
       return this.experience.url;
     },
+    imgUrl() {
+      return this.experience.imgUrl || '/images/image-placeholder.png' ;
+    }
   },
 };
 </script>
@@ -68,6 +71,15 @@ export default {
   margin-bottom: 1.5rem;
   border-radius: 15px;
 }
+
+@media only screen and (max-width: 575px) {
+  .card-img {
+    width: 100%;
+    height: initial;
+    margin: 0 1rem 1.5rem;
+  }
+}
+
 
 .card-info {
   width: 500px;

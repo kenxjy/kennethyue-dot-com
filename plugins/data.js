@@ -18,13 +18,12 @@ export default {
       dates: 'Apr 2019 - Apr 2020',
       location: 'Ajax, ON',
       description:
-        'Warrany Claim Services is a small private vehicle appraisal company. ' +
+        'Warranty Claim Services is a small private vehicle appraisal company. ' +
         'I assisted them with bringing their company online. ' +
         'Together we built a new application, from the ground up, utilizing a MEAN stack. ' +
         'We launched our application in November 2019. ' +
         'This allowed them to expand their clientele from a small group in Southern Ontario to customers all across Canada.\n\n' +
         'As the only developer, this project was largely a solo endeavour, with ideas and input from my client.',
-      url: '',
       imgUrl: '',
     },
     {
@@ -33,10 +32,13 @@ export default {
       dates: 'earned April 2019',
       location: 'Toronto, ON',
       description: 
-        'My years at Seneca College really helped me realised my interests with technology. ' + 
-        'It allowed myself to really push beyond the cirriculum with the pursuit of knowledge.',
+        'My years at Seneca College really helped me realise and pursue my interests. ' + 
+        'Ever since I was little, I have always been interested in three things, technology, learning and puzzles. ' +
+        'Seneca showed me how to begin stretching my legs, and I started to push beyond the cirriculum to quench ' +
+        'my thirst for knowledge. Personally, I think there is no greater feeling than to take what you have learned and ' +
+        'apply that knowledge to create a solution to a puzzle or problem, no matter how big or small.',
       url: '',
-      imgUrl: '',
+      imgUrl: '/images/seneca-college.jpg',
     },
   ],
   projects: [

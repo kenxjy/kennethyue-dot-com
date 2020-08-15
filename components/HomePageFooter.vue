@@ -1,7 +1,7 @@
 <template>
   <SectionContainer id="home-page-footer">
     <template v-slot:section-title>
-      <SectionTitle class="title">{{ text }}</SectionTitle>
+      <SectionTitle class="title" v-scrollanimation>{{ text }}</SectionTitle>
     </template>
     <span class="subtitle" v-scrollanimation>Let's connect!</span>
     <div class="icon-container" v-scrollanimation>

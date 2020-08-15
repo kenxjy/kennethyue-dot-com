@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .title {
   font-size: 28px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-container {
