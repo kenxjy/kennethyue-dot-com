@@ -10,7 +10,7 @@ export default {
         'We are building a new customer relationship management (CRM) application from the ground to up replace the current CRM.\n\n' +
         'The application is built primarily with Angular, Angular Material and Firebase, with the company\'s G-Suite directly integrated',
       url: 'https://thesymes.ca',
-      imgUrl: '',
+      imgUrl: '/images/symes.jpg',
     },
     {
       company: 'Warranty Claim Services, Inc.',
@@ -24,7 +24,7 @@ export default {
         'We launched our application in November 2019. ' +
         'This allowed them to expand their clientele from a small group in Southern Ontario to customers all across Canada.\n\n' +
         'As the only developer, this project was largely a solo endeavour, with ideas and input from my client.',
-      imgUrl: '',
+      imgUrl: '/images/wcs.jpg',
     },
     {
       company: 'Seneca College',
@@ -45,14 +45,15 @@ export default {
     {
       company: 'My Personal Website',
       description: 
-        'When I was making my personal website, I decided that rather than using any existing ' + 
+        'When I chose to make a personal website, I decided that rather than using an existing ' + 
         'all-in-one website builder solution, such as Squarespace or Wix, I wanted to take the ' +
-        'opportunity to learn a new framework. I chose to learn Vue.js and Nuxt.js.\n\n' +
+        'opportunity to learn a new framework. I chose to learn ' + 
+        '<a href="https://vuejs.org/">Vue.js</a> and <a href="https://nuxtjs.org/">Nuxt.js.</a>\n\n' +
         'Coming from an Angular background, the experience working with Vue.js and Nuxt.js ' +
         'was very refreshing and enjoyable. While I do prefer working with TypeScript over ' +
-        'JavaScript, perhaps it could be a future project to convert this application to TypeScript! 😄',
+        'JavaScript, perhaps it could be a future project to convert this application to Nuxt.js with TypeScript! 😄',
       url: 'https://github.com/kenxjy/personal-website',
-      imgUrl: '',
+      imgUrl: '/images/personal-website.jpg',
     },
     {
       company: 'WhatsApp Electron',
@@ -61,10 +62,10 @@ export default {
         'My family and I typically use WhatsApp as our method of communication. I also use Linux Mint as ' +
         'my daily OS on my home computer. Unfortunately, WhatsApp does not support Linux for its desktop clients. ' +
         'I could of easily downloaded an existing unofficial Electron-wrapped WhatsApp, but I decided to take ' +
-        'the opportunity to learn a little bit about Electron, while getting a desktop client of WhatsApp.\n\n' +
+        'the opportunity to learn a little bit about Electron, while getting a WhatsApp desktop client for Linux.\n\n' +
         'Two birds with one stone!',
       url: 'https://github.com/kenxjy/whatsapp-electron',
-      imgUrl: '',
+      imgUrl: '/images/whatsapp-electron.jpg',
     },
   ]
 };
