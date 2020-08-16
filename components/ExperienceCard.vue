@@ -92,7 +92,8 @@ export default {
   margin-bottom: 0.4rem;
   max-width: 100%;
   margin-top: 0;
-  color: rgb(0, 187, 255);
+  color: rgb(0, 108, 148);
+  
   font-size: 20px;
 }
 
@@ -101,7 +102,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: rgb(0, 163, 223);
 }
 
 .card-subtitle {
