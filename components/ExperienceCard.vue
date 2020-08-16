@@ -1,10 +1,6 @@
 <template>
   <div class="card">
-    <img
-      class="card-img"
-      :src="imgUrl"
-      alt="image"
-    />
+    <img class="card-img" :src="imgUrl" alt="image" />
     <div class="card-info">
       <a v-if="url" class="card-title" :href="url" target="_blank">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>
@@ -51,8 +47,8 @@ export default {
       return this.experience.url;
     },
     imgUrl() {
-      return this.experience.imgUrl || '/images/image-placeholder.png' ;
-    }
+      return this.experience.imgUrl || '/images/image-placeholder.png';
+    },
   },
 };
 </script>
@@ -63,6 +59,9 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
+  align-items: flex-start;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .card-img {
@@ -72,19 +71,21 @@ export default {
   border-radius: 15px;
 }
 
-@media only screen and (max-width: 575px) {
-  .card-img {
-    width: 100%;
-    height: initial;
-    margin: 0 1rem 1.5rem;
-  }
-}
-
-
 .card-info {
   width: 500px;
   max-width: 100%;
   padding: 0 1rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-info {
+    padding: 0;
+  }
 }
 
 .card-title {
