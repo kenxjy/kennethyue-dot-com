@@ -40,6 +40,9 @@ i {
   align-items: center;
   flex-direction: column;
   background: #333;
+  background-image: url('/images/IMG_5879.JPG');
+  background-position: bottom left;
+  background-size: cover;
 }
 
 .section-title {
