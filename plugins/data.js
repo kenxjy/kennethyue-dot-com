@@ -52,7 +52,7 @@ export default {
         'Coming from an Angular background, the experience working with Vue.js and Nuxt.js ' +
         'was very refreshing and enjoyable. While I do prefer working with TypeScript over ' +
         'JavaScript, perhaps it could be a future project to convert this application to Nuxt.js with TypeScript! 😄',
-      url: 'https://github.com/kenxjy/personal-website',
+      url: 'https://github.com/kenxjy/kennethyue-dot-com',
       imgUrl: '/images/personal-website.jpg',
     },
     {
