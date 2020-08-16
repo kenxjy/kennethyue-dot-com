@@ -27,6 +27,7 @@ export default {
 html,
 body {
   color: #333;
+  background-color: #f0f0f0;
   margin: 0;
   overflow-x: hidden;
   font-family: 'Roboto', Verdana, Helvetica, Tahoma, sans-serif;
