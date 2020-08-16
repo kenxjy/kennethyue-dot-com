@@ -13,7 +13,7 @@
         <i>{{ dates }}</i>
       </p>
       <p class="location-text" v-if="location">{{ location }}</p>
-      <p class="description-text">{{ description }}</p>
+      <p class="description-text" v-html="description"></p>
     </div>
   </div>
 </template>
