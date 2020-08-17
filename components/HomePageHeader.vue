@@ -1,8 +1,6 @@
 <template>
   <div id="home-page-header" v-scrollanimation>
-    <SectionTitle class="section-title" v-bind:color="color">
-     {{ name }}
-    </SectionTitle>
+    <SectionTitle class="section-title" v-bind:color="color">{{ name }}</SectionTitle>
   </div>
 </template>
 
@@ -40,18 +38,20 @@ i {
   align-items: center;
   flex-direction: column;
   background: #333;
-  background-image: url('/images/IMG_5879.JPG');
-  background-position: bottom left;
+  background-image: url('/images/header-background.jpeg');
+  background-position: center;
   background-size: cover;
 }
 
 .section-title {
   font-size: 40px;
   color: white !important;
+  text-shadow: 1px 1px #333;
 }
 
 .section-title::before,
 .section-title::after {
   background-color: white !important;
+  box-shadow: 1px 1px #333;
 }
 </style>
