@@ -1,7 +1,7 @@
 <template>
   <div class="icon-wrapper">
-    <a :href="href" target="_blank">
-      <img class="icon" :src="imgSrc" />
+    <a :href="href" target="_blank" rel="noreferrer">
+      <img class="icon" :src="imgSrc" :alt="alt" />
     </a>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
       type: String,
       required: true,
     },
+    alt: String,
   },
   computed: {
     imgSrc() {

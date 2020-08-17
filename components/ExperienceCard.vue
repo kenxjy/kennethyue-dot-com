@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <img class="card-img" :src="imgUrl" alt="image" />
+    <img class="card-img" :src="imgUrl" :alt="imgAlt" />
     <div class="card-info">
-      <a v-if="url" class="card-title" :href="url" target="_blank">{{ company }}</a>
+      <a v-if="url" class="card-title" :href="url" target="_blank" rel="noreferrer">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>
       <p class="card-subtitle" v-if="jobTitle">
         <span>{{ jobTitle }}</span>
@@ -49,6 +49,9 @@ export default {
     imgUrl() {
       return this.experience.imgUrl || '/images/image-placeholder.png';
     },
+    imgAlt() {
+      return this.experience.imgAlt || 'image-placeholder';
+    },
   },
 };
 </script>
@@ -93,7 +96,7 @@ export default {
   max-width: 100%;
   margin-top: 0;
   color: rgb(0, 108, 148);
-  
+
   font-size: 20px;
 }
 
