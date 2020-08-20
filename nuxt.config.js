@@ -2,7 +2,7 @@ const name = 'Kenneth Yue';
 const description =
   'A Toronto-based Software Developer with a passion for technology';
 const url = 'https://kennethyue.com/';
-const image = url + 'images/header-background.jpeg';
+const image = url + 'images/og-image.jpg';
 
 export default {
   /*
