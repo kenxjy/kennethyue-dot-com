@@ -1,11 +1,14 @@
 <template>
   <div>
-    <ScrollButtonContainer />
-    <div class="container" id="main-container">
-      <HomePageHeader name="Kenneth Yue" />
-      <ExperienceList section-title="My work so far" v-bind:experiences="experience" />
-      <ExperienceList section-title="My personal projects" v-bind:experiences="projects" />
-      <HomePageFooter />
+    <HomePageHeader name="Kenneth Yue" />
+    <div class="outer-container">
+      <div class="container" id="main-container">
+        <div id="top"></div>
+        <ExperienceList section-title="My work so far" v-bind:experiences="experience" />
+        <ExperienceList section-title="My personal projects" v-bind:experiences="projects" />
+        <HomePageFooter />
+      </div>
+      <ScrollButtonContainer />
     </div>
   </div>
 </template>
@@ -27,10 +30,15 @@ export default {
 html,
 body {
   color: #333;
-  background-color: #f0f0f0;
   margin: 0;
   overflow-x: hidden;
   font-family: 'Roboto', Verdana, Helvetica, Tahoma, sans-serif;
+}
+
+.outer-container {
+  width: 100vw;
+  background: #f0f0f0;
+  padding-top: 2rem;
 }
 
 .container {
@@ -39,6 +47,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#top {
+  position: absolute;
+  top: 0;
 }
 
 @media only screen and (max-width: 575px) {
@@ -69,6 +82,10 @@ body {
   .container {
     width: 1140px;
   }
+}
+
+.top {
+  position: absolute;
 }
 
 .aos-enter {
