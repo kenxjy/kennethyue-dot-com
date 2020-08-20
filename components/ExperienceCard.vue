@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img class="card-img" :src="imgUrl" :alt="imgAlt" />
+    <img class="card-img" loading="lazy" :src="imgUrl" :alt="imgAlt" />
     <div class="card-info">
       <a v-if="url" class="card-title" :href="url" target="_blank" rel="noreferrer">{{ company }}</a>
       <span v-else class="card-title">{{ company }}</span>

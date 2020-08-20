@@ -1,7 +1,7 @@
 <template>
   <div class="icon-wrapper">
     <a :href="href" target="_blank" rel="noreferrer">
-      <img class="icon" :src="imgSrc" :alt="alt" />
+      <img class="icon" loading="lazy" :src="imgSrc" :alt="alt" />
     </a>
   </div>
 </template>
