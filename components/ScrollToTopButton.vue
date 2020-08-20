@@ -11,9 +11,9 @@ export default {
   methods: {
     scrollToTop() {
       SmoothScroll.scrollTo(0);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

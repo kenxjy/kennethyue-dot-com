@@ -14,13 +14,13 @@ export default {
   data() {
     return {
       windowWidth: null,
-      atBottomOfPage: null
+      atBottomOfPage: null,
     };
   },
   computed: {
     aboveThreshold() {
       return this.windowWidth >= 768;
-    }
+    },
   },
   mounted() {
     this.windowWidth = window.innerWidth;
@@ -40,8 +40,8 @@ export default {
         window.pageYOffset + window.innerHeight >=
         document.body.offsetHeight - 250
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
