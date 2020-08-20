@@ -28,7 +28,7 @@ export default {
     isBottomOfPage: function () {
       return (
         window.pageYOffset + window.innerHeight >=
-        this.parentElement.offsetHeight
+        window.document.body.offsetHeight
       );
     },
     scrollDown: function () {
@@ -72,6 +72,7 @@ export default {
   position: fixed;
   bottom: 1.25rem;
   right: 1.4rem;
+  z-index: 99;
 }
 
 .button {

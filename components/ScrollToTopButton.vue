@@ -23,6 +23,7 @@ export default {
   position: fixed;
   bottom: 1.25rem;
   right: 1.4rem;
+  z-index: 99;
 }
 
 .button {
