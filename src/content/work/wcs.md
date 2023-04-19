@@ -7,32 +7,35 @@ endDate: 2020-04-01
 img: /images/wcs.jpg
 img_alt: The logo of Warranty Claim Services
 description: |
-  Warranty Claim Services is a small private vehicle appraisal company. I assisted them with bringing their company online. Together we built a Customer Relationship Application from the ground up. This allowed them to expand their clientele from a small group in Southern Ontario to customers all across Canada!
+  Building an application from scratch for Warranty Claim Services utilizing MEAN stack technology. The development process included the creation of the back-end API, the front-end, and troubleshooting issues, resulting in a successful launch in November 2019, with Warranty Claim Services seeing a significant increase in business.
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - Full Stack
+  - MongoDB
+  - Express.js
+  - Angular 2+
+  - Node.js
 ---
 
-## Level-two heading
+# Building an Application from Scratch: A Success Story
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+## Starting from scratch
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+When I first started collaborating with Warranty Claim Services (WCS), they were at square one, with no servers, databases, APIs, or UI. Not a single line of code had been written. Given my training at Seneca College, I recommended that we develop our application employing a MEAN stack, a technology that I was most proficient with, so that we could get up and running as soon as possible.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+## The Solo Endeavor
 
-### Level-three heading
+Things started off on the right foot! I initiated the development of the API, using Node.js and Express.js, and held weekly meetings with WCS to apprise them of the progress and obtain feedback on data structures and schemas. After the API was completed, we commenced front-end development. I chose Angular for the UI, as it was what I was most familiar with at the time. I also used ng-bootstrap to set up a prototype quickly, which we could work from. After a meeting with WCS, they approved of the prototype, and we began building the front-end.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+During the development process, we received feature requests. This was expected, but at the time, I had no idea how to implement these features. Nevertheless, I persevered, conducting research and exploring possible solutions to prepare these features for our MVP. After many hours of research and testing, solutions were found, and features were implemented. The MVP was completed.
 
-### Level-three heading
+## Troubleshooting
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+We commenced beta testing the application with one of WCS's clients, and I monitored it for any bugs or issues that might arise. As expected, no beta test is flawless, and we encountered issues causing unexpected behavior when users attempted to submit data. We conducted investigations and discovered that these issues arose when compressing excessively large images. We decided to restrict the allowable file size and add validation for file sizes on our APIs, as users should not be submitting large images in the first place. This was an oversight on our part that should have been implemented from the start. However, we should only learn from our mistakes rather than dwell on them.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+## The Launch
 
-#### Level-four heading
+The application was officially launched in November 2019, and it quickly gained momentum. In the first two months, Warranty Claim Services saw their online business increase nearly tenfold, from a handful of appraisal requests to 42 in December 2019, and then nearly doubling to 87 in January 2020.
 
-- We noted this
-- And also this other point
+## Conclusion
+
+Collaborating with Warranty Claim Services was an unforgettable experience that I am immensely proud of. I only hope to apply what I learned from this experience and surpass it in future projects. Building an application from scratch can be challenging, but with dedication and perseverance, success can be achieved.
