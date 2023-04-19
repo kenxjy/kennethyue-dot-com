@@ -1,7 +1,7 @@
 ---
 import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
-import { NAME } from '../scripts/globals';
+import { NAME, LINKS } from '../scripts/globals';
 
 interface Props {
   showBackground?: boolean;
@@ -16,9 +16,8 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
-  { label: 'Email', href: 'https://twitter.com/me', icon: 'envelope' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kenxjy', icon: 'linkedin-logo' },
-  { label: 'GitHub', href: 'https://github.com/kenxjy', icon: 'github-logo' },
+  { label: 'LinkedIn', href: LINKS.linkedin, icon: 'linkedin-logo' },
+  { label: 'GitHub', href: LINKS.github, icon: 'github-logo' },
 ];
 
 const { showBackground = false } = Astro.props;

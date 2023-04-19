@@ -1,17 +1,18 @@
 ---
 import ActionButton from './ActionButton.astro';
 import Icon from './Icon.astro';
+import { LINKS } from '../scripts/globals';
 ---
 
 <aside>
   <div class="wrapper contact-me-box gap-4">
     <h2>Let's connect!</h2>
     <div class="button-container gap-2">
-      <ActionButton href="mailto:me@example.com">
+      <ActionButton href={LINKS.email}>
         Email
         <Icon icon="envelope" size="1.2em" />
       </ActionButton>
-      <ActionButton href="mailto:me@example.com">
+      <ActionButton href={LINKS.linkedin}>
         LinkedIn
         <Icon icon="linkedin-logo" size="1.2em" />
       </ActionButton>
