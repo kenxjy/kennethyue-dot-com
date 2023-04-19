@@ -19,6 +19,13 @@ tags:
   - Node.js
 ---
 
+### Job Overview
+  - Designed, setup and maintained databases.
+  - Designed and developed REST API.
+  - Designed and developed Front-end SPA.
+  - Weekly meetings with project manager for sprint planning and review.
+  - Provided phone and email tech support to customers.
+
 # Building an Application from Scratch: A Success Story
 
 ## Starting from scratch

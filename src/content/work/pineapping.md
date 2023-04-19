@@ -18,7 +18,7 @@ tags:
   - Azure DevOps
 ---
 
-### What I do
+### Job Overview
   - Regularly attend Stand-up Meetings
   - Sprint planning and review
   - Front-end Development with Angular 2+

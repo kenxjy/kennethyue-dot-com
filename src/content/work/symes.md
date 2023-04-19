@@ -19,11 +19,18 @@ tags:
   - Firebase
 ---
 
+### Job Overview
+  - Designed and developed front-end SPA.
+  - Designed and developed serverless APIs using Google Cloud Functions.
+  - Wrote scripts for automated data migration.
+  - Weekly meetings with project manager for sprint planning and review.
+  - Maintain and update internal software
+
 # A New Journey: Developing a Comprehensive System
 
 ## Starting from scratch: Round Two
 
-Following the success of my collaboration with [Warranty Claim Services](./wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging. In this article, I will detail how I used Firebase as a backend-as-a-service, the migration process, and the development shift that led to the creation of a comprehensive CRM.
+Following the success of my collaboration with [Warranty Claim Services](./wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging. 
 
 ## The Development Process
 
