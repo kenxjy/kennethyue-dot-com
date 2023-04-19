@@ -1,0 +1,63 @@
+---
+interface Props {
+  info: {
+    name: string;
+    startYear: number;
+    endYear: number;
+    degreeName: string;
+    description?: string; 
+  }
+}
+
+const { name, startYear, endYear, degreeName, description } = Astro.props.info;
+---
+
+<div class="stack card">
+  <h3 class="name">{name}</h3>
+  <span class="degree-name">{degreeName}</span>
+  <span class="years">{startYear} - {endYear}</span>
+  <div class="description">{description}</div>
+</div>
+
+<style>
+  .card {
+    font-size: var(--text-base)
+  }
+  
+  .card:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-800)
+  }
+
+  .name {
+    font-size: var(--text-lg);
+    font-weight: bold;
+  }
+
+  .degree-name,
+  .years {
+    font-style: italic;
+    font-size: var(--text-md);
+  }
+
+  .description {
+    white-space: pre-wrap;
+  }
+
+
+  @media (min-width: 50em) {
+    .card {
+      font-size: var(--text-base);
+    }
+
+    .name {
+      font-size: var(--text-xl);
+    }
+
+    .degree-name,
+    .years {
+      font-style: italic;
+      font-size: var(--text-lg);
+    }
+  }
+</style>

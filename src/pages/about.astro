@@ -1,0 +1,272 @@
+---
+import '../styles/global.css';
+
+import ContactMe from '../components/ContactMe.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import StandardLayout from '../layouts/StandardLayout.astro';
+import EducationCard from '../components/EducationCard.astro';
+
+const education = [
+  {
+    name: 'Seneca College',
+    startYear: 2017,
+    endYear: 2019,
+    degreeName: 'Computer Programming and Analysis Advanced Diploma',
+    description: `
+3.9 GPA, graduated with Honours
+
+Accomplishments:
+- President's Honour List: April 2018, December 2018
+`,
+  },
+  {
+    name: 'McMaster University',
+    startYear: 2010,
+    endYear: 2015,
+    degreeName: 'Bachelor of Science (B.Sc.), Life Sciences',
+  },
+  {
+    name: 'Trinity College School',
+    startYear: 2009,
+    endYear: 2005,
+    degreeName: 'High School Diploma',
+    description: `
+Activities and Societies: 
+  -  Computer Lab Assistant
+  -  HelpDesk Volunteer
+  -  Chapel Choir Member
+
+Accomplishments:
+  -  Silver level community service recognition (120+ hours)
+  -  Headmaster’s Awards for Academic Distinction: 2009
+`,
+  },
+];
+
+const skills = [
+  'TypeScript',
+  'Angular 2+',
+  'Node.js',
+  'JavaScript',
+  'HTML',
+  'CSS3',
+  'Astro',
+  'Vue.js',
+  'Nuxt',
+  'Frontend Development',
+  'Backend Development',
+  'C++',
+  'C',
+  'Java',
+  'C#',
+  'ASP.NET',
+  'SQL',
+  'MongoDB',
+  'Linux (Ubuntu/Debian)',
+  'Docker',
+  'Windows',
+  'Microsoft Office',
+  'Firebase',
+  'Visual Studio Code',
+];
+---
+
+<StandardLayout title="About | Kenneth Yue" description="About Kenneth Yue">
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <SectionHeader title="About">
+        <div class="intro">
+          Thank you for taking the time to stop by.<br />
+          Read below to learn more about myself and my background
+        </div>
+        <img
+          width="1553"
+          height="873"
+          src="/images/header-background.jpeg"
+          alt="Kenneth Yue sitting in a field of Lavenders"
+        />
+      </SectionHeader>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content stack gap-4">
+          <p>
+            Since a young age, my passion for technology has been unwavering. My parents wished
+            for me to pursue a career in medicine, and not wanting to disappoint them, I tried to
+            follow-through. Despite this, I've always been fascinated with the latest advancements
+            in computers and information technology. While studying life sciences at school, I
+            eagerly enrolled in computer programming courses whenever possible. And outside of school,
+            I spent my free time writing small programs, building computers, and tinkering with servers.
+            In 2017, I finally decided to pursue my passion and started my journey in the IT industry by
+            obtaining a diploma from Seneca College.
+          </p>
+          <p>
+            For me, the power and versatility of technology is what makes this field so exciting.
+            Being able to create tools and solutions that can make people's lives easier or more
+            efficient is incredibly satisfying. I still remember the first project I took on as a
+            professional, where I worked with a small company to develop a tool to speed up their
+            turnaround time. This help them expand their business online and attract
+            clients from all across Canada.
+          </p>
+          <p>
+            One of the things I love about technology is that it's constantly evolving, with new tools,
+            frameworks, and technologies being released every day. As a developer, I'm always eager
+            to learn about these advancements and think about how they can be used to improve my projects
+            and enhance my skills. Keeping up with the rapid pace of change can be challenging, but it's
+            also part of what makes this field so exciting.
+          </p>
+          <p>
+            When I'm not working, you can usually find me tinkering with servers. I have my own personal
+            homelab project where I experiment with various tools such as Ansible, Docker, Kubernetes,
+            Proxmox, and different storage solutions like MergerFS, SnapRAID, Unraid, and TrueNAS. One of
+            the best things about my homelab is that it allows me to learn new skills while also having fun.
+          </p>
+          <p>
+            Another passion of mine is climbing. Since a friend introduced me to indoor climbing in 2018,
+            I've been hooked. I love the mental and physical challenges that climbing presents, and the
+            feeling of accomplishment when I complete a difficult climb is truly exhilarating.
+          </p>
+
+          <!-- <p>
+            From a young age, I have had a strong interest in the field of technology.
+            Despite my parents' encouragement to pursue a career in the medical industry, I
+            remained committed to staying up to date on the latest trends in computers and 
+            information technology. Throughout my academic years, I consistently sought out
+            courses and electives relating computer programming. Outside of my formal education,
+            I dedicated my time to developing small programs, building computers, and
+            experimenting with servers. In 2017, I decided to embark upon a 
+            career in IT and obtained a diploma from Seneca College.
+          </p>
+          <p>
+            The power and versatility of technology have always been a driving force in my
+            professional aspirations. There is a certain satisfaction from creating tools that can improve the
+            efficiency and ease of individuals' lives that draws me to this field. This
+            passion was first actualized when I collaborated with a small business in Ontario
+            to bring their services online. It expanded their client base beyond Mississauga to 
+            encompass customers from all over Canada.
+          </p>
+          <p>
+            Continuous learning and growth are essential aspects of my career. I am consistently
+            driven to explore new tools, technologies, and frameworks. When learning something new,
+            I always consider how I can integrate this newfound knowledge into my ongoing projects
+            or use it to enhance my development skills. Given the rapid pace of change in the technology
+            space, I remain steadfast in my dedication to staying informed and up to date.
+          </p>
+          <p>
+            Outside of my professional endeavors, I enjoy exploring the intricacies of servers through
+            personal homelab projects. This undertaking allows me to experiment with various tools such
+            as Ansible, Docker, Kubernetes, Proxmox, and various storage solutions technologies, including
+            MergerFS, SnapRAID, Unraid, and TrueNAS. The learning opportunities and rewards that come with
+            these pursuits are boundless. Often times I found this knowledge can also carry forward into my 
+            professional career.
+          </p>
+          <p>
+            Climbing is a significant passion in my life, and I has been a passtime of mine since 2018 when a
+            friend introduced me to the sport. I am drawn to the problem-solving and fitness aspects of
+            climbing, as it provides a unique combination of physical and mental challenges. There is an unparalleled
+            sense of accomplishment that comes with completing a challenging climb.
+          </p> -->
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content stack gap-4">
+          {education.map((value) => <EducationCard info={value} />)}
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content skills">
+          {skills.map((v) => <p>{v}</p>)}
+        </div>
+      </section>
+    </main>
+
+    <ContactMe />
+  </div>
+</StandardLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  
+  .intro {
+    font-size: var(--text-lg);
+    margin-top: -1rem;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 27em) {
+    .skills {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .intro {
+      font-size: var(--text-xl);
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+
+  @media (min-width: 63em) {
+    .skills {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>
