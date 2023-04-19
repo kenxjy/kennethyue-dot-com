@@ -1,0 +1,35 @@
+---
+interface Props {
+  flex?: boolean;
+  align?: 'start' | 'center' | 'end';
+}
+
+const { flex = true, align = 'center' } = Astro.props;
+
+const classList = flex ? 'stack ' + align : '' 
+
+---
+
+<section class:list={['section']}>
+  <div class:list={['wrapper', classList]}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    margin: 2rem 0;
+  }
+  
+  .start {
+    align-items: flex-start;
+  }
+
+  .center {
+    align-items: center;
+  }
+
+  .end {
+    align-items: flex-end;
+  }
+</style>
