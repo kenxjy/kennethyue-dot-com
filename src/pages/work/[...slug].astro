@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import { CollectionEntry, getCollection } from 'astro:content';
+import format from 'date-fns/format';
 
 import ContactMe from '../../components/ContactMe.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
@@ -35,12 +36,12 @@ const { Content } = await entry.render();
           <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
           <SectionHeader title={entry.data.title} align="start">
             {
-              (entry.data.role ?? entry.data.timeText) && 
+              (entry.data.role ?? entry.data.timeText) && (
                 <div class="sub-heading">
                   {entry.data.role && <p>{entry.data.role}</p>}
                   {entry.data.timeText && <p class="time-text">{entry.data.timeText}</p>}
                 </div>
-              
+              )
             }
           </SectionHeader>
 
@@ -49,6 +50,25 @@ const { Content } = await entry.render();
               {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
             </div>
             <p class="description">{entry.data.description}</p>
+          </div>
+          <div class="dates">
+            <p class="publish-date">
+              <strong>Date Published:</strong>&nbsp;
+              {format(entry.data.pubDate, 'MMM dd, yyyy')}
+            </p>
+            {
+              entry.data.lastModified && (
+                <p class="modified-date">
+                  <strong>Last Modified:</strong>&nbsp;
+                  {format(entry.data.lastModified, 'MMM dd, yyyy')}
+                </p>
+              )
+            }
+						{
+							entry.data.editorsNote && (
+								<p class="editors-note">{entry.data.editorsNote}</p>
+							)
+						}
           </div>
         </div>
       </header>
@@ -71,21 +91,31 @@ const { Content } = await entry.render();
     border-bottom: 1px solid var(--gray-800);
   }
 
+	.dates {
+		margin-top: 1rem;
+	}
+
+  .publish-date,
+  .modified-date,
+	.editors-note {
+    text-align: right;
+  }
+
   .back-link {
     display: none;
   }
 
-	.sub-heading {
-		margin-top: -1rem;
-		margin-bottom: 0.5rem;
-		text-align: center;
-		font-size: var(--text-lg);
-	}
+  .sub-heading {
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: var(--text-lg);
+  }
 
-	.time-text {
+  .time-text {
     font-style: italic;
     color: var(--accent-dark);
-	}
+  }
 
   .details {
     display: grid;
@@ -185,10 +215,10 @@ const { Content } = await entry.render();
       align-self: flex-start;
     }
 
-		.sub-heading {
-			text-align: left;
-			margin-bottom: 0;
-		}
+    .sub-heading {
+      text-align: left;
+      margin-bottom: 0;
+    }
 
     .details {
       grid-template: auto / 1fr 1fr;
