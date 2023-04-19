@@ -30,7 +30,7 @@ tags:
 
 ## Starting from scratch: Round Two
 
-Following the success of my collaboration with [Warranty Claim Services](./wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging. 
+Following the success of my collaboration with [Warranty Claim Services](./02-wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging. 
 
 ## The Development Process
 
