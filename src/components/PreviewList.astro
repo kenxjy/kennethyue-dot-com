@@ -1,0 +1,40 @@
+---
+
+---
+
+<ul class="list offset">
+  <slot />
+</ul>
+
+<style>
+  .list {
+    display: grid;
+    grid-template: auto / auto;
+    gap: 1rem;
+    list-style: none;
+    align-items: center;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: 45em;
+  }
+
+  @media (min-width: 66.25em) {
+    .list {
+      grid-template: auto / 1fr 1fr;
+      align-items: start;
+      padding: 5rem;
+      gap: 2.5rem;
+      max-width: 100%;
+    }
+
+    .list.offset {
+			--row-offset: 7.5rem;
+			padding-bottom: var(--row-offset);
+		}
+
+		/* Shift first item in each row vertically to create staggered effect. */
+		.list.offset > :global(:nth-child(even)) {
+			transform: translateY(var(--row-offset));
+		}
+  }
+</style>
