@@ -1,16 +1,19 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
 import { NAME } from "../scripts/globals";
+import Nav from "./Nav.astro";
 
 ---
 <div id="background"></div>
-<div id="spacer"></div>
-<div id="title-container">
-  <SectionHeader
-    color="var(--gray-0)"
-    title={NAME}
-    tagline="Hello! I am a Software Developer currently based in Toronto, Ontario"
-  />
+<div id="home-page-header">
+  <Nav showBackground={true} />
+  <div id="title-container">
+    <SectionHeader
+      color="var(--gray-0)"
+      title={NAME}
+      tagline="Hello! I am a Software Developer currently based in Toronto, Ontario"
+    />
+  </div>
 </div>
 
 <style>
@@ -18,14 +21,21 @@ import { NAME } from "../scripts/globals";
     margin-bottom: 0.25rem;
   }
 
+  #home-page-header {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template: auto 1fr auto / auto;
+  }
+
   #spacer {
-    height: 30vh;
+    /* height: 30vh; */
   }
   
   #title-container {
-    width: 100vw;
-    height: 50vh;
-    padding: 0;
+    grid-area: 3 / 1;
+    height: 70vh;
+    padding: 5vh;
     margin: 0;
     display: flex;
     align-items: center;
@@ -39,12 +49,6 @@ import { NAME } from "../scripts/globals";
 		);
   }
 
-  @media (max-width: 50em) {
-    #spacer {
-      height: 32vh;
-    }
-  }
-  
   #background {
     width: 100vw;
     height: 100vh;
