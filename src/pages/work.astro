@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import { getWorkCollection } from '../scripts/util';
+
+import ContactMe from '../components/ContactMe.astro';
+import PreviewCard from '../components/PreviewCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PreviewList from '../components/PreviewList.astro';
+import StandardLayout from '../layouts/StandardLayout.astro';
+
+const workExperience = await getWorkCollection();
+---
+
+<StandardLayout
+  title="My Work Experience | Kenneth Yue"
+  description="Learn about Kenneth Yue's most recent work experience and projects"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <SectionHeader title="My Jouney So Far" tagline="See below to get an idea of my past experience." />
+      <PreviewList>
+        {
+          workExperience.map((project) => (
+            <li>
+              <PreviewCard project={project} />
+            </li>
+          ))
+        }
+      </PreviewList>
+    </main>
+    <ContactMe />
+  </div>
+</StandardLayout>
