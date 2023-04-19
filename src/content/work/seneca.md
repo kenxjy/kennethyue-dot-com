@@ -1,9 +1,12 @@
 ---
 title: Seneca College
+pubDate: 2023-04-18
+# lastModified:
+# editorsNote: 
 role: Computer Programming Diploma
-timeText: Earned April 2019
 startDate: 2017-09-01
 endDate: 2019-04-01
+timeText: Earned April 2019
 img: /images/seneca-college.jpg
 img_alt: A photo of Seneca College
 description: |

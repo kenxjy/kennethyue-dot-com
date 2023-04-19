@@ -1,9 +1,12 @@
 ---
 title: The Symes
+pubDate: 2023-04-18'
+# lastModified:
+# editorsNote: 
 role: Full-Stack Developer
-timeText: Since Oct 2019
 startDate: 2019-10-01
 endDate: null
+timeText: Since Oct 2019
 img: /images/symes.jpg
 img_alt: The Symes Logo
 description: |

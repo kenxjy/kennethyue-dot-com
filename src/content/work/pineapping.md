@@ -1,9 +1,12 @@
 ---
 title: Pineapping
+pubDate: 2023-04-19
+# lastModified:
+# editorsNote: 
 role: Full-Stack Developer
-timeText: Since April 2022
 startDate: 2022-04-02
 endDate: null
+timeText: Since April 2022
 img: /images/pineapping.png
 img_alt: The Pineapping Logo
 description: |
