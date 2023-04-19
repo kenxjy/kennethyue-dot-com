@@ -1,14 +1,12 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
 
 export interface Props {
 	title?: string;
 	description?: string;
-	showNavBackground?: boolean;
 }
 
-const { title, description, showNavBackground } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,8 +14,5 @@ const { title, description, showNavBackground } = Astro.props;
 	<head>
 		<MainHead title={title} description={description} />
 	</head>
-	<body>
-		<Nav showBackground={showNavBackground} />
-		<slot />
-	</body>
+	<slot />
 </html>
