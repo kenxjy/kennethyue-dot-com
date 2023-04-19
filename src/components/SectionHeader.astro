@@ -1,0 +1,101 @@
+---
+interface Props {
+  title: string;
+  tagline?: string;
+  color?: string;
+  align?: 'start' | 'center';
+}
+
+const { align = 'center', color, tagline, title } = Astro.props;
+---
+
+<header class:list={['stack section-header gap-4', align]}>
+  <div class="stack gap-2">
+    <h1 class="title">{title}</h1>
+    {tagline && <p class="tagline">{tagline}</p>}
+  </div>
+  <slot />
+</header>
+
+<style define:vars={{ color }}>
+  .section-header {
+    font-size: var(--text-lg);
+    text-align: center;
+
+  }
+
+  .title,
+	.tagline {
+		max-width: 37ch;
+		margin-inline: auto;
+    color: var(--color, var(--gray-200));
+	}
+
+  .start {
+    text-align: start;
+  }
+
+  .title {
+    width: max-content;
+    position: relative;
+    text-align: center;
+    overflow-wrap: break-word;
+    max-width: 100%;
+		font-size: var(--text-3xl);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (min-width: 50em) {
+    .section-header {
+			font-size: var(--text-xl);
+		}
+
+		.start {
+			text-align: start;
+		}
+
+		.start .title,
+		.start .tagline {
+			margin-inline: unset;
+		}
+
+    .title {
+			font-size: var(--text-5xl);
+		}
+
+    .title::before,
+    .title::after {
+      background-color: var(--color, var(--gray-200));
+      content: ' ';
+      position: absolute;
+
+      width: 54%;
+      height: 1px;
+      display: inline-block;
+    }
+
+    .title::before {
+      top: -0.75rem;
+      left: 0%;
+    }
+
+    .title::after {
+      bottom: -0.75rem;
+      right: 0%;
+    }
+  }
+
+  @media only screen and (max-width: 50em) {
+    .title::before {
+      background-color: var(--color, var(--gray-200));
+      content: ' ';
+      position: absolute;
+      bottom: -0.5rem;
+      width: 100px;
+      height: 1px;
+      display: inline-block;
+      left: calc(50% - 50px);
+    }
+  }
+</style>
