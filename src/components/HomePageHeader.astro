@@ -1,5 +1,6 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
+import { NAME } from "../scripts/globals";
 
 ---
 <div id="background"></div>
@@ -7,8 +8,8 @@ import SectionHeader from "./SectionHeader.astro";
 <div id="title-container">
   <SectionHeader
     color="var(--gray-0)"
-    title="Kenneth Yue"
-    tagline="Hello! I am a Full-Stack Developer currently based in Toronto, Ontario"
+    title={NAME}
+    tagline="Hello! I am a Software Developer currently based in Toronto, Ontario"
   />
 </div>
 
