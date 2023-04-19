@@ -1,28 +1,11 @@
 ---
 import { NAME } from '../scripts/globals';
-import HomePageHeader from '../components/HomePageHeader.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactMe from '../components/ContactMe.astro';
+import HomePageLayout from '../layouts/HomePageLayout.astro';
 ---
 
-<BaseLayout title={NAME} showNavBackground={true}>
-  <HomePageHeader />
-  <div class="spacer theme-colors"></div>
-  <main class="theme-colors">
-    <div class="wrapper">
-      
-    </div>
-		<ContactMe />
-  </main>
-</BaseLayout>
-
-<style>
-  main {
-    width: 100vw;
-    z-index: 1;
-  }
-
-  .spacer {
-    height: 150px;
-  }
-</style>
+<HomePageLayout title={NAME}>
+	<div class="wrapper">
+	</div>
+	<ContactMe />
+</HomePageLayout>
