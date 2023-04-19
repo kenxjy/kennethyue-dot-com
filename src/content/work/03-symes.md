@@ -11,7 +11,7 @@ img: /images/symes.jpg
 img_alt: The Symes Logo
 description: |
   The Symes is one of the top venues in Toronto, primarily focused on weddings and private events.
-  Together we built a new customer relationship management (CRM) application from the ground to up manage their operations
+  Together we built a new comprehensive customer relationship management (CRM) application from the ground to up manage their operations from start to finish. 
 tags:
   - Full Stack
   - Angular 2+
@@ -44,4 +44,4 @@ After months of development, we were ready to migrate the new CRM from the old s
 
 ## Conclusion
 
-In conclusion, developing the new CRM as a solo developer was a significant challenge, but using Firebase as a backend-as-a-service and the subsequent development shift allowed me to surpass our initial vision and create an all-encompassing system that can manage The Symes' operations from start to finish.
+In conclusion, developing the new CRM as a solo developer was a significant challenge, but using Firebase and the subsequent development shift allowed us to surpass our initial vision and create an all-encompassing system that can manage The Symes' operations from start to finish.
