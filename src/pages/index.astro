@@ -1,13 +1,56 @@
 ---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
 import { NAME } from '../scripts/globals';
 import ContactMe from '../components/ContactMe.astro';
 import HomePageLayout from '../layouts/HomePageLayout.astro';
 import SkillsHighlight from '../components/SkillsHighlight.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PreviewCard from '../components/PreviewCard.astro';
+import PreviewList from '../components/PreviewList.astro';
+import SectionWrapper from '../components/SectionWrapper.astro';
+
+const workExperience = (await getCollection('work'))
+.sort((a, b) => {
+  if (!a.data.endDate && !b.data.endDate) {
+    return b.data.startDate.valueOf() - a.data.startDate.valueOf();
+  }
+
+  const aEndDateValue = a.data.endDate?.valueOf() ?? Number.MAX_VALUE;
+  const bEndDateValue = b.data.endDate?.valueOf() ?? Number.MAX_VALUE;
+  return bEndDateValue - aEndDateValue;
+})
+  .slice(0, 4);
 ---
 
 <HomePageLayout title={NAME}>
-	<div class="wrapper">
-		<SkillsHighlight />
-	</div>
-	<ContactMe />
+  <SectionWrapper>
+    <SkillsHighlight />
+  </SectionWrapper>
+
+  <SectionWrapper flex={true}>
+    <SectionHeader
+      title="My Jouney So Far"
+      color="var(--gray-200)"
+      tagline="Have a look at where my software development journey has taken me so far."
+      titleFontSize="var(--text-3xl)"
+      smTitleFontSize="var(--text-xl)"
+      taglineFontSize="var(--text-lg)"
+      smTaglineFontSize="var(--text-md)"
+    />
+    <PreviewList>
+      {
+        workExperience.map((v) => (
+          <li>
+            <PreviewCard project={v} />
+          </li>
+        ))
+      }
+    </PreviewList>
+  </SectionWrapper>
+  <!-- <section class="section with-background with-cta">
+      
+    </section> -->
+
+  <ContactMe />
 </HomePageLayout>
