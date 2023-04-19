@@ -6,17 +6,16 @@ import BaseLayout from './BaseLayout.astro';
 export interface Props {
 	title?: string;
 	description?: string;
-	showNavBackground?: boolean;
 }
 
-const { title, description, showNavBackground } = Astro.props;
+const { title, description } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
-  <body>
-    <Nav showBackground={showNavBackground} />
+  <div class="theme-colors">
+    <Nav />
     <slot />
     <Footer />
-  </body>
+  </div>
 </BaseLayout>
 
 
