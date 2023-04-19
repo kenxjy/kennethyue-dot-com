@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getCollection } from 'astro:content';
+import { getWorkCollection } from '../scripts/util';
 import { NAME } from '../scripts/globals';
 import ContactMe from '../components/ContactMe.astro';
 import HomePageLayout from '../layouts/HomePageLayout.astro';
@@ -10,17 +10,7 @@ import PreviewCard from '../components/PreviewCard.astro';
 import PreviewList from '../components/PreviewList.astro';
 import SectionWrapper from '../components/SectionWrapper.astro';
 
-const workExperience = (await getCollection('work'))
-.sort((a, b) => {
-  if (!a.data.endDate && !b.data.endDate) {
-    return b.data.startDate.valueOf() - a.data.startDate.valueOf();
-  }
-
-  const aEndDateValue = a.data.endDate?.valueOf() ?? Number.MAX_VALUE;
-  const bEndDateValue = b.data.endDate?.valueOf() ?? Number.MAX_VALUE;
-  return bEndDateValue - aEndDateValue;
-})
-  .slice(0, 4);
+const workExperience = (await getWorkCollection()).slice(0, 4);
 ---
 
 <HomePageLayout title={NAME}>
