@@ -4,6 +4,8 @@ export const collections = {
   work: defineCollection({
     schema: z.object({
       title: z.string(),
+      lastModified: z.coerce.date().optional(),
+      editorsNote: z.string().optional(),
       role: z.string().optional(),
       timeText: z.string().optional(),
       description: z.string(),
