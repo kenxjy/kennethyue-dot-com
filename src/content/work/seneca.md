@@ -7,33 +7,28 @@ endDate: 2019-04-01
 img: /images/seneca-college.jpg
 img_alt: A photo of Seneca College
 description: |
-  The Symes is one of the top venues in Toronto, primarily focused on weddings and private events.
-  We are building a new customer relationship management (CRM) application from the ground to up manage their operations
+  The start of my journey as a Software Developer at Seneca College. An overview of my coursework and some projects that I worked in during my time there. Here I share my thoughts and reflections regarding my education.
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - Full Stack
+  - Web Development
 ---
 
-## Level-two heading
+# The Start of My Journey as a Software Developer
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+## Introduction
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+My journey as a Software Developer began at Seneca College. Drawing from my hobbies and previous experiences with computer programming classes, I found success in my first year. It was during courses involving C++ and various web technologies that I realized I had made the correct career choice.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+## What I Learned
 
-### Level-three heading
+At Seneca, I studied Object-Oriented Programming with C++ and Java, Modern (for 2018) Web Development with Node.js, React and Angular, and Databases and SQL with IBM db2 and OracleDB, as well as NoSQL databases using MongoDB. These topics equipped me with fundamental knowledge and skills that I have honed over the years and still apply to my work. While I found the coursework to be comprehensive, I find classes about data structures and learning Big-O notation to be a bit lacking. However, I took it upon myself to learn about these topics on my own time outside of class.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+## Some of My Projects
 
-### Level-three heading
+Over the course of my studies at Seneca, I completed several projects and assignments that I am particularly proud of, which can be viewed on my [Github page](https://github.com/kenxjy). These include:
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+- [Object Oriented Programming (OOP345) Final Assignment](https://github.com/kenxjy/OOP345-Final_Project)
+- [Java Workshops (JAC444)](https://github.com/kenxjy/JAC444-workshops)
+- [Web Development (WEB322) Final Assignment](https://github.com/kenxjy/WEB322-assignment6)
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
-
-#### Level-four heading
-
-- We noted this
-- And also this other point
+These projects allowed me to apply and expand upon the skills and knowledge I gained from my coursework at Seneca.
