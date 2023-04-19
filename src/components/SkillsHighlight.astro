@@ -1,0 +1,65 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Full Stack</h2>
+		<p>Familiarity in all aspects of software development, from the front-end to the back-end.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+    <Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+    <h2>Lifelong Learner</h2>
+		<p>Passion for continuous learning and improvement on new technologies and frameworks as they emerge.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Problem Solver</h2>
+		<p>Enthusiasm analyzing and resolving complex technical issues and debugging applications.</p>
+	</div>
+</section>
+
+<style>
+  .skill-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+	.skills {
+    padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+    .skill-header {
+      flex-direction: row;
+    }
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

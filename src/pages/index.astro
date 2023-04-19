@@ -2,10 +2,12 @@
 import { NAME } from '../scripts/globals';
 import ContactMe from '../components/ContactMe.astro';
 import HomePageLayout from '../layouts/HomePageLayout.astro';
+import SkillsHighlight from '../components/SkillsHighlight.astro';
 ---
 
 <HomePageLayout title={NAME}>
 	<div class="wrapper">
+		<SkillsHighlight />
 	</div>
 	<ContactMe />
 </HomePageLayout>
