@@ -4,9 +4,22 @@ interface Props {
   tagline?: string;
   color?: string;
   align?: 'start' | 'center';
+  titleFontSize?: string;
+  smTitleFontSize?: string;
+  taglineFontSize?: string;
+  smTaglineFontSize?: string;
 }
 
-const { align = 'center', color, tagline, title } = Astro.props;
+const {
+  align = 'center',
+  tagline,
+  title,
+  color = 'var(--gray-200)',
+  titleFontSize = 'var(--text-5xl)',
+  smTitleFontSize = 'var(--text-3xl)',
+  taglineFontSize = 'var(--text-xl)',
+  smTaglineFontSize = 'var(--text-lg)',
+} = Astro.props;
 ---
 
 <header class:list={['stack section-header gap-4', align]}>
@@ -17,19 +30,17 @@ const { align = 'center', color, tagline, title } = Astro.props;
   <slot />
 </header>
 
-<style define:vars={{ color }}>
+<style define:vars={{ color, titleFontSize, smTitleFontSize, taglineFontSize, smTaglineFontSize }}>
   .section-header {
-    font-size: var(--text-lg);
     text-align: center;
-
   }
 
   .title,
-	.tagline {
-		max-width: 37ch;
-		margin-inline: auto;
-    color: var(--color, var(--gray-200));
-	}
+  .tagline {
+    max-width: 37ch;
+    margin-inline: auto;
+    color: var(--color);
+  }
 
   .start {
     text-align: start;
@@ -41,32 +52,36 @@ const { align = 'center', color, tagline, title } = Astro.props;
     text-align: center;
     overflow-wrap: break-word;
     max-width: 100%;
-		font-size: var(--text-3xl);
+    font-size: var(--smTitleFontSize);
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
+  .tagline {
+    font-size: var(--smTaglineFontSize);
+  }
+
   @media only screen and (min-width: 50em) {
-    .section-header {
-			font-size: var(--text-xl);
-		}
+    .start {
+      text-align: start;
+    }
 
-		.start {
-			text-align: start;
-		}
-
-		.start .title,
-		.start .tagline {
-			margin-inline: unset;
-		}
+    .start .title,
+    .start .tagline {
+      margin-inline: unset;
+    }
 
     .title {
-			font-size: var(--text-5xl);
-		}
+      font-size: var(--titleFontSize);
+    }
+
+    .tagline {
+      font-size: var(--taglineFontSize);
+    }
 
     .title::before,
     .title::after {
-      background-color: var(--color, var(--gray-200));
+      background-color: var(--color);
       content: ' ';
       position: absolute;
 
@@ -88,7 +103,7 @@ const { align = 'center', color, tagline, title } = Astro.props;
 
   @media only screen and (max-width: 50em) {
     .title::before {
-      background-color: var(--color, var(--gray-200));
+      background-color: var(--color);
       content: ' ';
       position: absolute;
       bottom: -0.5rem;
