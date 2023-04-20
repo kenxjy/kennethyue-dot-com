@@ -11,7 +11,7 @@ const { data, slug } = Astro.props.project;
 
 <div class="card">
   <div class="title-container">
-    <a class="title" href={`/work/${slug}`}>{data.title}</a>
+    <a class="title link" href={`/work/${slug}`}>{data.title}</a>
     <img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
     <div class="subtext-container">
       {
@@ -30,7 +30,7 @@ const { data, slug } = Astro.props.project;
     </div>
   </div>
   <p class="description">{data.description}</p>
-  <a class="read-more" href={`/work/${slug}`}>
+  <a class="read-more link" href={`/work/${slug}`}>
     Read More <Icon icon="arrow-right"></Icon>
   </a>
 </div>
@@ -111,7 +111,16 @@ const { data, slug } = Astro.props.project;
     justify-self: end;
     margin-bottom: 0.5rem;
     margin-right: 1rem;
-    text-decoration-line: none;
+  }
+  
+  a.link {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+  
+  a.link:hover {
+    text-decoration-color: currentColor;
   }
 
   @media (min-width: 36em) {
