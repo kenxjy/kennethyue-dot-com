@@ -7,6 +7,7 @@ import PreviewCard from '../components/PreviewCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import PreviewList from '../components/PreviewList.astro';
 import StandardLayout from '../layouts/StandardLayout.astro';
+import SectionWrapper from '../components/SectionWrapper.astro';
 
 const workExperience = await getWorkCollection();
 ---
@@ -17,16 +18,18 @@ const workExperience = await getWorkCollection();
 >
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">
-      <SectionHeader title="My Jouney So Far" tagline="See below to get an idea of my past experience." />
-      <PreviewList>
-        {
-          workExperience.map((project) => (
-            <li>
-              <PreviewCard project={project} />
-            </li>
-          ))
-        }
-      </PreviewList>
+      <SectionWrapper flex={true}>
+        <SectionHeader title="My Jouney So Far" tagline="See below to get an idea of my past experience." />
+        <PreviewList>
+          {
+            workExperience.map((project) => (
+              <li>
+                <PreviewCard project={project} />
+              </li>
+            ))
+          }
+        </PreviewList>
+      </SectionWrapper>
     </main>
     <ContactMe />
   </div>
