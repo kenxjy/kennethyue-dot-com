@@ -5,6 +5,7 @@ import ContactMe from '../components/ContactMe.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import StandardLayout from '../layouts/StandardLayout.astro';
 import EducationCard from '../components/EducationCard.astro';
+import { NAME } from '../scripts/globals';
 
 const education = [
   {
@@ -72,7 +73,7 @@ const skills = [
 ];
 ---
 
-<StandardLayout title="About | Kenneth Yue" description="About Kenneth Yue">
+<StandardLayout title={`About | ${NAME}`} description={`The about page of ${NAME}`}>
   <div class="stack gap-20">
     <main class="wrapper about">
       <SectionHeader title="About">

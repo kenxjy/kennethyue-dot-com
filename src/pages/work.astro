@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { getWorkCollection } from '../scripts/util';
-
+import { NAME } from '../scripts/globals';
 import ContactMe from '../components/ContactMe.astro';
 import PreviewCard from '../components/PreviewCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
@@ -13,8 +13,8 @@ const workExperience = await getWorkCollection();
 ---
 
 <StandardLayout
-  title="My Work Experience | Kenneth Yue"
-  description="Learn about Kenneth Yue's most recent work experience and projects"
+  title={`My Journey So Far | ${NAME}`}
+  description={`Learn about ${NAME}'s most recent work experience and projects`}
 >
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">
