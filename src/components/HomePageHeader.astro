@@ -3,7 +3,9 @@ import SectionHeader from "./SectionHeader.astro";
 import { NAME } from "../scripts/globals";
 import Nav from "./Nav.astro";
 
+
 ---
+<div id="pre-page-spacer"></div>
 <div id="background"></div>
 <div id="home-page-header">
   <Nav showBackground={true} />
@@ -23,13 +25,17 @@ import Nav from "./Nav.astro";
 
   #home-page-header {
     height: 100vh;
-    width: 100vw;
     display: grid;
     grid-template: auto 1fr auto / auto;
   }
 
-  #spacer {
-    /* height: 30vh; */
+  #pre-page-spacer {
+    position: fixed;
+    bottom: 100vh;
+    left: 0;
+    right: 0;
+    top: -100vh;
+    background: var(--gray-999);
   }
   
   #title-container {
