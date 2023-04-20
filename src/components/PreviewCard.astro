@@ -114,7 +114,27 @@ const { data, slug } = Astro.props.project;
     text-decoration-line: none;
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: 36em) {
+    .card {
+      border-radius: 1.5rem;
+    }
+
+    .title {
+      border-radius: 0.9375rem;
+    }
+  }
+  
+  @media (min-width: 62.5em) {
+    .card {
+      border-radius: 0.75rem;
+    }
+    
+    .title {
+      border-radius: 0.75rem;
+    }
+  }
+
+  @media (min-width: 83em) {
     .card {
       border-radius: 1.5rem;
     }
