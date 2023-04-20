@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import { getWorkCollection } from '../scripts/util';
-import { NAME } from '../scripts/globals';
 import ContactMe from '../components/ContactMe.astro';
 import HomePageLayout from '../layouts/HomePageLayout.astro';
 import SkillsHighlight from '../components/SkillsHighlight.astro';
@@ -13,7 +12,7 @@ import SectionWrapper from '../components/SectionWrapper.astro';
 const workExperience = (await getWorkCollection()).slice(0, 4);
 ---
 
-<HomePageLayout title={NAME}>
+<HomePageLayout>
   <SectionWrapper>
     <SkillsHighlight />
   </SectionWrapper>
