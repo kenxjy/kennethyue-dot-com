@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ActionButton from './ActionButton.astro';
+import Icon from './Icon.astro';
 
 interface Props {
   project: CollectionEntry<'work'>;
@@ -10,88 +10,36 @@ const { data, slug } = Astro.props.project;
 ---
 
 <div class="card">
-  <span class="title">{data.title}</span>
-  <img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-  <div class="subtext-container">
-    {
-      data.role && (
-        <div class="subtext">
-          {data.role}
-          {data.timeText && (
-            <span class="time-text">
-              <br />
-              {data.timeText}
-            </span>
-          )}
-        </div>
-      )
-    }
+  <div class="title-container">
+    <a class="title" href={`/work/${slug}`}>{data.title}</a>
+    <img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+    <div class="subtext-container">
+      {
+        data.role && (
+          <div class="subtext">
+            {data.role}
+            {data.timeText && (
+              <span class="time-text">
+                <br />
+                {data.timeText}
+              </span>
+            )}
+          </div>
+        )
+      }
+    </div>
   </div>
-  {
-    data.description ? (
-      <div class="description-container gap-2">
-        <p class="description">{data.description}</p>
-        <div class="description-read-more">
-          <ActionButton
-            href={`/work/${slug}`}
-            lgFontSize="var(--text-base)"
-            fontSize="var(--text-base)"
-            smFontSize="var(--text-sm)"
-            size="small"
-          >
-            Read More
-          </ActionButton>
-        </div>
-      </div>
-    ) : (
-      <a class="overlay-link" href={`/work/${slug}`} />
-    )
-  }
+  <p class="description">{data.description}</p>
+  <a class="read-more" href={`/work/${slug}`}>
+    Read More <Icon icon="arrow-right"></Icon>
+  </a>
 </div>
 
-<!-- <a class="card" href={`/work/${slug}`}>
-	<span class="title">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-</a> -->
-
 <style>
-  .overlay-link {
-    grid-area: 1 / 1 / 4 / 4;
-  }
-
-  .description-container {
-    opacity: 0;
-    z-index: 2;
-    grid-area: 1 / 1 / 4 / 4;
-    transition: opacity var(--theme-transition);
-    overflow-y: hidden;
-    display: grid;
-    grid-template: 1fr auto / auto;
-    padding: 2rem;
-    padding-bottom: 0.5rem;
-    background: hsla(0, 0%, 20%, 0.7);
-    border: 0px solid var(--gray-800);
-    border-radius: 0.75rem;
-  }
-
-  .description {
-    z-index: 3;
-    height: max-content;
-    max-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    color: var(--gray-200);
-    padding: 0.5rem;
-    background: var(--gray-999);
-    border: 1px solid var(--gray-800);
-    border-radius: 0.75rem;
-    align-self: center;
-  }
-
   .card {
     display: grid;
-    grid-template: auto 1fr auto / auto 1fr auto;
-    height: 22rem;
+    grid-template: 18em 1fr auto / auto;
+    min-height: 26em;
     background: var(--gradient-subtle);
     border: 1px solid var(--gray-800);
     border-radius: 0.75rem;
@@ -104,9 +52,9 @@ const { data, slug } = Astro.props.project;
     box-shadow: var(--shadow-md);
   }
 
-  .card:hover > .description-container {
-    opacity: 100;
-    transition: opacity var(--theme-transition);
+  .title-container {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
   }
 
   .title {
@@ -115,13 +63,20 @@ const { data, slug } = Astro.props.project;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     background: var(--gray-999);
-    color: var(--gray-200);
+    /* color: var(--gray-200); */
     border: 1px solid var(--gray-800);
     border-radius: 0.75rem;
     text-decoration: none;
     font-family: var(--font-brand);
     font-size: var(--text-lg);
     font-weight: 500;
+  }
+
+  img {
+    grid-area: 1 / 1 / 4 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .subtext-container {
@@ -147,14 +102,39 @@ const { data, slug } = Astro.props.project;
     color: var(--accent-dark);
   }
 
-  img {
-    grid-area: 1 / 1 / 4 / 4;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .description {
+    color: var(--gray-200);
+    padding: 1rem;
   }
 
-  @media (min-width: 50em) {
+  .read-more {
+    justify-self: end;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    text-decoration-line: none;
+  }
+
+  @media (min-width: 36em) {
+    .card {
+      border-radius: 1.5rem;
+    }
+
+    .title {
+      border-radius: 0.9375rem;
+    }
+  }
+  
+  @media (min-width: 62.5em) {
+    .card {
+      border-radius: 0.75rem;
+    }
+    
+    .title {
+      border-radius: 0.75rem;
+    }
+  }
+
+  @media (min-width: 83em) {
     .card {
       border-radius: 1.5rem;
     }
