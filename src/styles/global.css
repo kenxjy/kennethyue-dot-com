@@ -1,27 +1,84 @@
 /* Global variables */
 :root {
-	/* Colors */
-	--gray-0: #090b11;
-	--gray-50: #141925;
-	--gray-100: #283044;
-	--gray-200: #3d4663;
-	--gray-300: #505d84;
-	--gray-400: #6474a2;
-	--gray-500: #8490b5;
-	--gray-600: #a3acc8;
-	--gray-700: #c3cadb;
-	--gray-800: #e3e6ee;
-	--gray-900: #f3f4f7;
-	--gray-999-basis: 0, 0%, 100%;
-	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #ffffff;
+	/* 
+		Colours 
+		Light and dark theme is complementary to each other.
+		Modify these colours for changing light and dark theme colours
+	*/
+	
+	/* Theme Colors */
+	--xjy-light: #00A393;
+	--xjy-regular: #028EA1;
+	--xjy-dark: #05648A;
+	--xjy-light-basis: 187, 98%, 44%; /* Basis must be in HSL */
+	--xjy-dark-basis: 187, 98%, 20%; /* Basis must be in HSL */
+	--xjy-highlight: #F7F9DD; /* Highlight should contrast well with dark backgrounds */
+	--xjy-emphasize: #EF6F6C; 
+	
+	/* Gray Scale */
+	--xjy-gray-0: #090B11;
+	--xjy-gray-0-basis: 225, 31%, 5%; /* Basis must be in HSL */
 
-	--accent-light: #c561f6;
-	--accent-regular: #7611a6;
-	--accent-dark: #1c0056;
-	--accent-overlay-basis: 280, 89%, 67%;
+	--xjy-gray-50: #141925;
+	--xjy-gray-100: #283044;
+	--xjy-gray-200: #3D4663;
+	--xjy-gray-300: #505D84;
+	--xjy-gray-400: #6474A2;
+	--xjy-gray-500: #8490B5;
+	--xjy-gray-600: #A3ACC8;
+	--xjy-gray-700: #C3CADB;
+	--xjy-gray-800: #E3E6EE;
+	--xjy-gray-900: #F3F4F7;
+	
+	--xjy-gray-999: #FFFFFF;
+	--xjy-gray-999-basis: 0, 0%, 100%; /* Basis must be in HSL */
+
+	/* Fonts */
+	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	/* --font-body: 'Public Sans', var(--font-system); */
+	/* --font-brand: Rubik, var(--font-system); */
+	--font-body: 'Figtree', var(--font-system);
+	--font-brand: 'Jost', var(--font-system);
+
+	/* Text Sizes */
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.125rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.625rem;
+	--text-2xl: 2.125rem;
+	--text-3xl: 2.625rem;
+	--text-4xl: 3.5rem;
+	--text-5xl: 4.5rem;
+
+	/* Transitions */
+	--theme-transition: 0.2s ease-in-out;
+}
+
+/* Light Theme */
+:root {
+	--gray-0: var(--xjy-gray-0);
+	--gray-50: var(--xjy-gray-50);
+	--gray-100: var(--xjy-gray-100);
+	--gray-200: var(--xjy-gray-200);
+	--gray-300: var(--xjy-gray-300);
+	--gray-400: var(--xjy-gray-400);
+	--gray-500: var(--xjy-gray-500);
+	--gray-600: var(--xjy-gray-600);
+	--gray-700: var(--xjy-gray-700);
+	--gray-800: var(--xjy-gray-800);
+	--gray-900: var(--xjy-gray-900);
+	--gray-999-basis: var(--xjy-gray-9990-basis);
+	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
+	--gray-999: var(--xjy-gray-999);
+
+	--accent-light: var(--xjy-light);
+	--accent-regular: var(--xjy-regular);
+	--accent-dark: var(--xjy-dark);
+	--accent-overlay-basis: var(--xjy-light-basis);
 	--accent-overlay: hsla(var(--accent-overlay-basis), 0.33);
-	--accent-subtle-overlay-basis: var(--accent-overlay-basis); 
+	--accent-subtle-overlay-basis: var(--xjy-light-basis); 
 	--accent-subtle-overlay: hsla(var(--accent-subtle-overlay-basis), 0.33);
 	--accent-text-over: var(--gray-999);
 
@@ -40,7 +97,7 @@
 	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
-		#ca7879,
+		var(--xjy-emphasize),
 		var(--accent-regular),
 		var(--accent-dark)
 	);
@@ -53,59 +110,39 @@
 		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
 	--shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
 		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
-
-	/* Text Sizes */
-	--text-sm: 0.875rem;
-	--text-base: 1rem;
-	--text-md: 1.125rem;
-	--text-lg: 1.25rem;
-	--text-xl: 1.625rem;
-	--text-2xl: 2.125rem;
-	--text-3xl: 2.625rem;
-	--text-4xl: 3.5rem;
-	--text-5xl: 4.5rem;
-
-	/* Fonts */
-	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: 'Public Sans', var(--font-system);
-	--font-brand: Rubik, var(--font-system);
-
-	/* Transitions */
-	--theme-transition: 0.2s ease-in-out;
 }
 
 :root.theme-dark {
-	--gray-0: #ffffff;
-	--gray-50: #f3f4f7;
-	--gray-100: #e3e6ee;
-	--gray-200: #c3cadb;
-	--gray-300: #a3acc8;
-	--gray-400: #8490b5;
-	--gray-500: #6474a2;
-	--gray-600: #505d84;
-	--gray-700: #3d4663;
-	--gray-800: #283044;
-	--gray-900: #141925;
-	--gray-999-basis: 225, 31%, 5%;
-	--gray-999: #090b11;
+	--gray-0: var(--xjy-gray-999);
+	--gray-50: var(--xjy-gray-900);
+	--gray-100: var(--xjy-gray-800);
+	--gray-200: var(--xjy-gray-700);
+	--gray-300: var(--xjy-gray-600);
+	--gray-400: var(--xjy-gray-500);
+	--gray-500: var(--xjy-gray-400);
+	--gray-600: var(--xjy-gray-300);
+	--gray-700: var(--xjy-gray-200);
+	--gray-800: var(--xjy-gray-100);
+	--gray-900: var(--xjy-gray-50);
+	--gray-999-basis: var(--xjy-gray-0-basis);
+	--gray-999: var(--xjy-gray-0);
 
-	--accent-light: #1c0056;
-	--accent-regular: #7611a6;
-	--accent-dark: #c561f6;
-	--accent-overlay-basis: 280, 89%, 67%;
+	--accent-light: var(--xjy-dark);
+	--accent-regular: var(--xjy-regular);
+	--accent-dark: var(--xjy-light);
+	--accent-overlay-basis: var(--xjy-light-basis);
 	--accent-overlay: hsla(var(--accent-overlay-basis), 0.33);
-	--accent-subtle-overlay-basis: 281, 81%, 36%; 
+	--accent-subtle-overlay-basis: var(--xjy-dark-basis);
 	--accent-subtle-overlay: hsla(var(--accent-subtle-overlay-basis), 0.33);
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
 
-	--gradient-stop-1: #4c11c6;
+	--gradient-stop-1: var(--xjy-highlight);
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
-		#ca7879,
+		var(--xjy-emphasize),
 		var(--accent-regular),
 		var(--accent-light)
 	);

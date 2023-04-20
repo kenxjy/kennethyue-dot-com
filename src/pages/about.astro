@@ -5,6 +5,7 @@ import ContactMe from '../components/ContactMe.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import StandardLayout from '../layouts/StandardLayout.astro';
 import EducationCard from '../components/EducationCard.astro';
+import { NAME } from '../scripts/globals';
 
 const education = [
   {
@@ -72,7 +73,7 @@ const skills = [
 ];
 ---
 
-<StandardLayout title="About | Kenneth Yue" description="About Kenneth Yue">
+<StandardLayout title={`About | ${NAME}`} description={`The about page of ${NAME}`}>
   <div class="stack gap-20">
     <main class="wrapper about">
       <SectionHeader title="About">
@@ -92,40 +93,42 @@ const skills = [
         <h2 class="section-title">Background</h2>
         <div class="content stack gap-4">
           <p>
-            Since a young age, my passion for technology has been unwavering. My parents wished
-            for me to pursue a career in medicine, and not wanting to disappoint them, I tried to
+            Since a young age, my passion for technology has been unwavering. My parents wished for
+            me to pursue a career in medicine, and not wanting to disappoint them, I tried to
             follow-through. Despite this, I've always been fascinated with the latest advancements
             in computers and information technology. While studying life sciences at school, I
-            eagerly enrolled in computer programming courses whenever possible. And outside of school,
-            I spent my free time writing small programs, building computers, and tinkering with servers.
-            In 2017, I finally decided to pursue my passion and started my journey in the IT industry by
-            obtaining a diploma from Seneca College.
+            eagerly enrolled in computer programming courses whenever possible. And outside of
+            school, I spent my free time writing small programs, building computers, and tinkering
+            with servers. In 2017, I finally decided to pursue my passion and started my journey in
+            the IT industry by obtaining a diploma from Seneca College.
           </p>
           <p>
             For me, the power and versatility of technology is what makes this field so exciting.
             Being able to create tools and solutions that can make people's lives easier or more
             efficient is incredibly satisfying. I still remember the first project I took on as a
             professional, where I worked with a small company to develop a tool to speed up their
-            turnaround time. This help them expand their business online and attract
-            clients from all across Canada.
+            turnaround time. This help them expand their business online and attract clients from
+            all across Canada.
           </p>
           <p>
-            One of the things I love about technology is that it's constantly evolving, with new tools,
-            frameworks, and technologies being released every day. As a developer, I'm always eager
-            to learn about these advancements and think about how they can be used to improve my projects
-            and enhance my skills. Keeping up with the rapid pace of change can be challenging, but it's
-            also part of what makes this field so exciting.
+            One of the things I love about technology is that it's constantly evolving, with new
+            tools, frameworks, and technologies being released every day. As a developer, I'm always
+            eager to learn about these advancements and think about how they can be used to improve
+            my projects and enhance my skills. Keeping up with the rapid pace of change can be
+            challenging, but it's also part of what makes this field so exciting.
           </p>
           <p>
-            When I'm not working, you can usually find me tinkering with servers. I have my own personal
-            homelab project where I experiment with various tools such as Ansible, Docker, Kubernetes,
-            Proxmox, and different storage solutions like MergerFS, SnapRAID, Unraid, and TrueNAS. One of
-            the best things about my homelab is that it allows me to learn new skills while also having fun.
+            When I'm not working, you can usually find me tinkering with servers. I have my own
+            personal homelab project where I experiment with various tools such as Ansible, Docker,
+            Kubernetes, Proxmox, and different storage solutions like MergerFS, SnapRAID, Unraid,
+            and TrueNAS. One of the best things about my homelab is that it allows me to learn new
+            skills while also having fun.
           </p>
           <p>
-            Another passion of mine is climbing. Since a friend introduced me to indoor climbing in 2018,
-            I've been hooked. I love the mental and physical challenges that climbing presents, and the
-            feeling of accomplishment when I complete a difficult climb is truly exhilarating.
+            Another passion of mine is climbing. Since a friend introduced me to indoor climbing in
+            2018, I've been hooked. I love the mental and physical challenges that climbing
+            presents, and the feeling of accomplishment when I complete a difficult climb is truly
+            exhilarating.
           </p>
 
           <!-- <p>
@@ -193,7 +196,7 @@ const skills = [
     flex-direction: column;
     gap: 3.5rem;
   }
-  
+
   .intro {
     font-size: var(--text-lg);
     margin-top: -1rem;
@@ -203,7 +206,6 @@ const skills = [
     display: grid;
     grid-template-columns: 1fr;
   }
-
 
   img {
     margin-top: 1.5rem;
