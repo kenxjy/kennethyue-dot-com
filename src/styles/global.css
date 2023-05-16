@@ -1,3 +1,41 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.1;
+	@apply font-brand;
+	font-weight: 600;
+	color: var(--gray-100);
+} */
+
+@layer base {
+	h1 {
+		@apply text-5xl;
+	}
+	
+	h2 {
+		@apply text-4xl;
+	}
+	
+	h3 {
+		@apply text-3xl;
+	}
+	
+	h4 {
+		@apply text-2xl;
+	}
+	
+	h5 {
+		@apply text-xl;
+	}
+}
+
 /* Global variables */
 :root {
 	/* 
@@ -42,7 +80,7 @@
 	--font-brand: 'Jost', var(--font-system);
 
 	/* Text Sizes */
-	--text-sm: 0.875rem;
+	/* --text-sm: 0.875rem;
 	--text-base: 1rem;
 	--text-md: 1.125rem;
 	--text-lg: 1.25rem;
@@ -50,7 +88,7 @@
 	--text-2xl: 2.125rem;
 	--text-3xl: 2.625rem;
 	--text-4xl: 3.5rem;
-	--text-5xl: 4.5rem;
+	--text-5xl: 4.5rem; */
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
@@ -201,7 +239,7 @@ h5 {
 	color: var(--gray-100);
 }
 
-h1 {
+/* h1 {
 	font-size: var(--text-5xl);
 }
 
@@ -219,10 +257,10 @@ h4 {
 
 h5 {
 	font-size: var(--text-xl);
-}
+} */
 
 /* Utilities */
-.container {
+/* .container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -256,7 +294,7 @@ h5 {
   .container {
     width: 1140px;
   }
-}
+} */
 
 .sr-only {
 	position: absolute;
@@ -282,7 +320,7 @@ h5 {
 	flex-direction: column;
 }
 
-.gap-2 {
+/* .gap-2 {
 	gap: 0.5rem;
 }
 .gap-4 {
@@ -305,9 +343,9 @@ h5 {
 }
 .gap-48 {
 	gap: 12rem;
-}
+} */
 
-@media (min-width: 50em) {
+/* @media (min-width: 50em) {
 	.lg\:gap-2 {
 		gap: 0.5rem;
 	}
@@ -332,6 +370,6 @@ h5 {
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
-}
+} */
 
 
