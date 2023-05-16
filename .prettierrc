@@ -4,5 +4,6 @@
     "prettier-plugin-tailwindcss"
   ],
   "pluginSearchDirs": false,
-  "printWidth": 80
+  "printWidth": 80,
+  "singleQuote": true
 }
