@@ -20,5 +20,7 @@
   "tailwindCSS.classAttributes": [
     "class",
     "class:list"
-  ]
+  ],
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "wordWrapColumn"
 }
