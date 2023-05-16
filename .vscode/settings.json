@@ -3,6 +3,17 @@
     "Pineapping",
     "Symes"
   ],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    ".prettierrc",
+    "astro.config.mjs",
+    "tailwind.config.cjs"
+  ],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
