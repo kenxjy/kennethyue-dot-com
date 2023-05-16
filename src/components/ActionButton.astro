@@ -1,74 +1,62 @@
 ---
+type Sizes = 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+type FontSizes = `text-${Sizes}`;
+
 interface Props {
   href: string;
-  lgFontSize?: string;
-  fontSize?: string;
-  smFontSize?: string;
-	size?: 'small' | 'large'
+  lgFontSize?: FontSizes;
+  fontSize?: FontSizes;
 }
 
 const {
   href,
-  lgFontSize = 'var(--text-xl)',
-  fontSize = 'var(--text-lg)',
-  smFontSize = 'var(--text-base)',
-	size = 'large'
 } = Astro.props;
 
-const classList = size === 'small' ? 'small' : '';
+let {
+  lgFontSize = 'text-xl',
+  fontSize = 'text-lg',
+} = Astro.props;
 
+let classes = `
+after:transition-color
+relative
+flex
+place-content-center
+gap-3
+overflow-hidden
+rounded-full
+bg-gradient-to-br
+from-orange-500
+via-teal-500
+to-teal-700
+px-8
+py-2
+text-center
+text-lg
+leading-tight
+text-slate-50
+no-underline
+shadow-md
+shadow-gray-800/25
+after:pointer-events-none
+after:absolute
+after:inset-0
+after:mix-blend-overlay
+after:duration-200
+after:ease-in-out
+after:content-['']
+hover:after:bg-white/30
+focus:after:bg-white/30
+dark:hover:after:bg-black/30
+dark:focus:after:bg-black/30
+md:px-10
+md:py-5
+md:text-xl
+`;
+
+classes = `${classes} ${fontSize} md:${lgFontSize}`;
 ---
 
-<a class={classList} href={href}><slot /></a>
+<a class:list={[classes]} href={href}><slot /></a>
 
-<style define:vars={{ fontSize, smFontSize, lgFontSize }}>
-  a {
-    position: relative;
-    display: flex;
-    place-content: center;
-    text-align: center;
-    padding: 0.56em 2em;
-    gap: 0.8em;
-    color: var(--accent-text-over);
-    text-decoration: none;
-    line-height: 1.1;
-    border-radius: 999rem;
-    overflow: hidden;
-    background: var(--gradient-accent-orange);
-    box-shadow: var(--shadow-md);
-    white-space: nowrap;
-    font-size: var(--smFontSize);
-  }
-
-  @media (min-width: 20em) {
-    a {
-      font-size: var(--fontSize);
-    }
-  }
-
-  /* Overlay for hover effects. */
-  a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    transition: background-color var(--theme-transition);
-    mix-blend-mode: overlay;
-  }
-
-  a:focus::after,
-  a:hover::after {
-    background-color: hsla(var(--gray-999-basis), 0.3);
-  }
-
-  @media (min-width: 50em) {
-    a {
-      padding: 1.125rem 2.5rem;
-      font-size: var(--lgFontSize);
-    }
-
-		a.small {
-			padding: 0.56em 2em;
-		}
-  }
-</style>
+<style></style>
