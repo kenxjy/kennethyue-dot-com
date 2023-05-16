@@ -5,59 +5,20 @@ interface Props {
     startYear: number;
     endYear: number;
     degreeName: string;
-    description?: string; 
-  }
+    description?: string;
+  };
 }
 
 const { name, startYear, endYear, degreeName, description } = Astro.props.info;
 ---
 
-<div class="stack card">
-  <h3 class="name">{name}</h3>
-  <span class="degree-name">{degreeName}</span>
-  <span class="years">{startYear} - {endYear}</span>
-  <div class="description">{description}</div>
+<div
+  class="flex flex-col border-b border-b-gray-100 pb-4 text-base last:border-b-0 last:pb-0 dark:border-b-gray-800"
+>
+  <h3 class="text-lg font-bold md:text-xl">{name}</h3>
+  <span class="font-md italic md:text-lg">{degreeName}</span>
+  <span class="font-md italic md:text-lg">{startYear} - {endYear}</span>
+  <div class="whitespace-pre-wrap">{description}</div>
 </div>
 
-<style>
-  .card {
-    font-size: var(--text-base)
-  }
-  
-  .card:not(:last-child) {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--gray-800)
-  }
-
-  .name {
-    font-size: var(--text-lg);
-    font-weight: bold;
-  }
-
-  .degree-name,
-  .years {
-    font-style: italic;
-    font-size: var(--text-md);
-  }
-
-  .description {
-    white-space: pre-wrap;
-  }
-
-
-  @media (min-width: 50em) {
-    .card {
-      font-size: var(--text-base);
-    }
-
-    .name {
-      font-size: var(--text-xl);
-    }
-
-    .degree-name,
-    .years {
-      font-style: italic;
-      font-size: var(--text-lg);
-    }
-  }
-</style>
+<style></style>
