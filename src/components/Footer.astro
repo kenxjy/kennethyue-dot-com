@@ -1,69 +1,30 @@
 ---
 import { NAME, LINKS } from '../scripts/globals';
 const currentYear = new Date().getFullYear();
+
+const links = [
+  { href: LINKS.linkedin, text: 'LinkedIn' },
+  { href: LINKS.github, text: 'GitHub' },
+];
 ---
 
-<footer>
-	<div class="group">
-		<p>&copy; {currentYear} {NAME}</p>
-	</div>
-	<p class="socials">
-		<a href={LINKS.linkedin}>LinkedIn</a>
-		<a href={LINKS.github}>GitHub</a>
-	</p>
+<footer
+  class="flex flex-col gap-12 px-8 py-12 text-center text-sm text-slate-600 dark:text-slate-400 md:flex-row md:justify-between md:px-20 md:py-10"
+>
+  <div class="flex flex-col gap-2 md:flex-row md:flex-wrap md:gap-4">
+    <p>&copy; {currentYear} {NAME}</p>
+  </div>
+  <p class="flex flex-wrap justify-center gap-4 md:justify-end">
+    {
+      links.map((link) => (
+        <a
+          class="text-slate-600 underline decoration-transparent decoration-solid transition duration-200 ease-in-out hover:decoration-current focus:decoration-current dark:text-slate-400"
+          href={link.href}
+        >
+          {link.text}
+        </a>
+      ))
+    }
+  </p>
 </footer>
-<style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
-		text-align: center;
-		color: var(--gray-400);
-		font-size: var(--text-sm);
-	}
-
-	footer a {
-		color: var(--gray-400);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	footer a:hover,
-	footer a:focus {
-		text-decoration-color: currentColor;
-	}
-
-	.group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.socials {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	@media (min-width: 50em) {
-		footer {
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 2.5rem 5rem;
-		}
-
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.socials {
-			justify-content: flex-end;
-		}
-	}
-</style>
+<style></style>
