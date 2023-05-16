@@ -16,5 +16,9 @@
   ],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "class:list"
+  ]
 }
