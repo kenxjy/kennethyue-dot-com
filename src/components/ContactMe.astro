@@ -4,10 +4,14 @@ import Icon from './Icon.astro';
 import { LINKS } from '../scripts/globals';
 ---
 
-<aside>
-  <div class="wrapper contact-me-box gap-4">
-    <h2>Let's connect!</h2>
-    <div class="button-container gap-2">
+<aside
+  class="w-100 border-b border-t border-b-gray-800 border-t-gray-800 py-10 md:py-20"
+>
+  <div class="container">
+    <h2 class="mb-2 max-w-prose text-center text-xl md:text-3xl">
+      Let's connect!
+    </h2>
+    <div class="mx-auto flex w-min flex-col gap-2 md:flex-row">
       <ActionButton href={LINKS.email}>
         Email
         <Icon icon="envelope" size="1.2em" />
@@ -20,51 +24,4 @@ import { LINKS } from '../scripts/globals';
   </div>
 </aside>
 
-<style>
-  .contact-me-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-	aside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-    padding: 2.5rem 0;
-	}
-
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    width: min-content;
-  }
-
-	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
-	}
-
-	@media (min-width: 50em) {
-		aside {
-			padding: 5rem 0;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-
-    .button-container {
-      flex-direction: row;
-    }
-
-		h2 {
-			font-size: var(--text-3xl);
-			text-align: left;
-		}
-	}
-</style>
+<style></style>
