@@ -1,35 +1,26 @@
 ---
+type ItemsPosition = 'start' | 'center' | 'end';
+type ItemsClass = `items-${ItemsPosition}`;
+
 interface Props {
   flex?: boolean;
-  align?: 'start' | 'center' | 'end';
+  align?: ItemsPosition;
 }
 
 const { flex = true, align = 'center' } = Astro.props;
-
-const classList = flex ? 'stack ' + align : '' 
-
+let classList: [string, ItemsClass] = null;
+if (flex) {
+  classList = [
+    'flex flex-col',
+    `items-${align}`
+  ];
+}
 ---
 
-<section class:list={['section']}>
-  <div class:list={['wrapper', classList]}>
+<section class="mx-8">
+  <div class:list={['container', classList]}>
     <slot />
   </div>
 </section>
 
-<style>
-  .section {
-    margin: 2rem 0;
-  }
-  
-  .start {
-    align-items: flex-start;
-  }
-
-  .center {
-    align-items: center;
-  }
-
-  .end {
-    align-items: flex-end;
-  }
-</style>
+<style></style>
