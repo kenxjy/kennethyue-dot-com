@@ -1,11 +1,10 @@
 ---
-type Sizes = 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
-type FontSizes = `text-${Sizes}`;
+import { FontSizeClass } from '../scripts/tailwindTypes';
 
 interface Props {
   href: string;
-  lgFontSize?: FontSizes;
-  fontSize?: FontSizes;
+  lgFontSize?: FontSizeClass;
+  fontSize?: FontSizeClass;
 }
 
 const { href, lgFontSize = 'text-xl', fontSize = 'text-lg' } = Astro.props;

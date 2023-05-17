@@ -1,6 +1,5 @@
 ---
-type ItemsPosition = 'start' | 'center' | 'end';
-type ItemsClass = `items-${ItemsPosition}`;
+import { ItemsPosition, ItemsPositionClass } from '../scripts/tailwindTypes';
 
 interface Props {
   flex?: boolean;
@@ -8,7 +7,7 @@ interface Props {
 }
 
 const { flex = true, align = 'center' } = Astro.props;
-let classList: [string, ItemsClass] = null;
+let classList: [string, ItemsPositionClass] = null;
 if (flex) {
   classList = [
     'flex flex-col',
