@@ -1,65 +1,50 @@
 ---
 import Icon from './Icon.astro';
+import { IconName } from './IconPaths';
+
+interface Highlight {
+  icon: IconName;
+  title: string;
+  description: string;
+}
+
+const highlights: Highlight[] = [
+  {
+    icon: 'code',
+    title: 'Full Stack',
+    description:
+      'Familiarity in all aspects of software development, from the front-end to the back-end.',
+  },
+  {
+    icon: 'graduation-cap',
+    title: 'Growth Mindset',
+    description:
+      'Enthusiasm for ongoing learning and growth in the fast-paced world of technology.',
+  },
+  {
+    icon: 'strategy',
+    title: 'Problem Solver',
+    description:
+      'Enthusiasm analyzing and resolving complex technical issues and debugging applications.',
+  },
+];
 ---
 
-<section class="skills">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>Familiarity in all aspects of software development, from the front-end to the back-end.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-    <Icon icon="graduation-cap" color="var(--accent-regular)" size="2.5rem" gradient />
-    <h2>Growth Mindset</h2>
-		<p>Enthusiasm for ongoing learning and growth in the fast-paced world of technology.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Problem Solver</h2>
-		<p>Enthusiasm analyzing and resolving complex technical issues and debugging applications.</p>
-	</div>
+<section class="flex flex-col gap-12 md:grid md:grid-cols-3 md:gap-20">
+  {
+    highlights.map((highlight) => (
+      <div class="flex flex-col gap-2 md:gap-4">
+        <Icon
+          icon={highlight.icon}
+          color="var(--accent-regular)"
+          size="2.5rem"
+          gradient
+        />
+        <h2 class="text-lg md:text-2xl">{highlight.title}</h2>
+        <p class="text-slate-600 dark:text-slate-400">{highlight.description}</p>
+      </div>
+    ))
+  }
 </section>
 
-<style>
-  .skill-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-	.skills {
-    padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
-
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
-
-	.skills p {
-		color: var(--gray-400);
-	}
-
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
-
-    .skill-header {
-      flex-direction: row;
-    }
-
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
-		}
-
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
-	}
-</style>
+<style></style>
