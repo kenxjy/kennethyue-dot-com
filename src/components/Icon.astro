@@ -1,9 +1,9 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { iconPaths } from './IconPaths';
+import { IconName, iconPaths } from './IconPaths';
 
 export interface Props {
-	icon: keyof typeof iconPaths;
+	icon: IconName;
 	color?: string;
 	gradient?: boolean;
 	size?: string;
@@ -49,7 +49,6 @@ const gradientId = 'icon-gradient-' + Math.round(Math.random() * 10e12).toString
 
 <style>
 	svg {
-		vertical-align: middle;
 		width: var(--size, 1em);
 		height: var(--size, 1em);
 	}
