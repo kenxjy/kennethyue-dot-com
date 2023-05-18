@@ -35,7 +35,11 @@ module.exports = {
       },
       center: true
     },
-    extend: {},
+    extend: {
+      height: {
+        'screen-sm': ['100vh /* Fallback */','100svh'],
+      }
+    },
   },
   plugins: [
     plugin(({ addUtilities }) => {
