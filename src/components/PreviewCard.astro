@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import Icon from './Icon.astro';
 
 interface Props {
   project: CollectionEntry<'work'>;
@@ -9,16 +8,19 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<div
-  class="grid mx-auto min-h-[24em] max-w-lg auto-cols-auto grid-rows-[18em_1fr_auto] overflow-hidden rounded-xl border border-slate-300 shadow-md shadow-slate-700/10 transition-shadow xjy-transition hover:shadow-lg dark:border-slate-700 dark:shadow-slate-300/10 md:rounded-2xl"
+<a
+  class="mx-auto grid min-h-[24em] max-w-lg auto-cols-auto grid-rows-[26.5em_auto] overflow-hidden rounded-xl border border-slate-300 shadow-md shadow-slate-700/10 transition-shadow xjy-transition hover:shadow-lg dark:border-slate-700 dark:shadow-slate-300/10 md:rounded-2xl [&_#title]:hover:decoration-current"
+  href={`/work/${slug}`}
 >
   <div
     class="grid grid-cols-[auto_1fr_auto] grid-rows-[auto_1fr_auto] [&_>_*]:inline-grid"
   >
-    <a
-      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 font-brand text-lg font-medium no-underline underline-offset-[0.25em] transition xjy-transition hover:underline hover:decoration-current md:rounded-xl"
-      href={`/work/${slug}`}>{data.title}</a
+    <div
+      id="title"
+      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 font-brand text-lg font-medium text-teal-600 underline decoration-transparent underline-offset-[0.25em] transition-colors xjy-transition dark:text-teal-400 md:rounded-xl"
     >
+      {data.title}
+    </div>
     <img
       class="col-start-1 col-end-4 row-start-1 row-end-4 h-full w-full object-cover"
       src={data.img}
@@ -45,12 +47,6 @@ const { data, slug } = Astro.props.project;
     </div>
   </div>
   <p class="p-4 text-slate-700">{data.description}</p>
-  <a
-    class="mb-2 mr-4 inline-block justify-self-end underline-offset-[0.25em] transition xjy-transition hover:underline hover:decoration-current"
-    href={`/work/${slug}`}
-  >
-    Read More <Icon icon="arrow-right" />
-  </a>
-</div>
+</a>
 
 <style></style>
