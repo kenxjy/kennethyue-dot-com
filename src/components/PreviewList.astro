@@ -1,40 +1,10 @@
 ---
-
 ---
 
-<ul class="list offset">
+<ul
+  class="grid w-full max-w-lg list-none auto-cols-auto auto-rows-auto items-center gap-6 py-20 md:max-w-full md:grid-cols-2 md:items-start md:gap-10 md:p-20 md:pb-[7.5rem] md:even:[&_>_li]:translate-y-[7.5rem]"
+>
   <slot />
 </ul>
 
-<style>
-  .list {
-    display: grid;
-    grid-template: auto / auto;
-    gap: 1rem;
-    list-style: none;
-    align-items: center;
-    padding: 5rem 1rem;
-    width: 100%;
-    max-width: 30em;
-  }
-
-  @media (min-width: 62.5em) {
-    .list {
-      grid-template: auto / 1fr 1fr;
-      align-items: start;
-      padding: 5rem;
-      gap: 2.5rem;
-      max-width: 100%;
-    }
-
-    .list.offset {
-			--row-offset: 7.5rem;
-			padding-bottom: var(--row-offset);
-		}
-
-		/* Shift first item in each row vertically to create staggered effect. */
-		.list.offset > :global(:nth-child(even)) {
-			transform: translateY(var(--row-offset));
-		}
-  }
-</style>
+<style></style>
