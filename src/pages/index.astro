@@ -20,12 +20,9 @@ const workExperience = (await getWorkCollection()).slice(0, 4);
   <SectionWrapper flex={true}>
     <SectionHeader
       title="My Journey So Far"
-      color="var(--gray-200)"
       tagline="Have a look at where my software development journey has taken me so far."
-      titleFontSize="var(--text-3xl)"
-      smTitleFontSize="var(--text-xl)"
-      taglineFontSize="var(--text-lg)"
-      smTaglineFontSize="var(--text-md)"
+      titleFontSize="text-xl md:text-3xl"
+      taglineFontSize="text-md md:text-lg"
     />
     <PreviewList>
       {
