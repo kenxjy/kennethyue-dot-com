@@ -17,7 +17,7 @@ const { data, slug } = Astro.props.project;
   >
     <div
       id="title"
-      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 font-brand text-lg font-medium text-teal-600 underline decoration-transparent underline-offset-[0.25em] transition-colors xjy-transition dark:text-teal-400 md:rounded-xl"
+      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 font-brand text-lg font-medium text-teal-600 underline decoration-transparent underline-offset-[0.25em] transition-colors xjy-transition dark:border-slate-800 dark:bg-slate-950 dark:text-teal-400 md:rounded-xl"
     >
       {data.title}
     </div>
@@ -33,7 +33,7 @@ const { data, slug } = Astro.props.project;
     >
       {
         data.role && (
-          <div class="z-10 max-w-max rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-right text-sm md:rounded-xl">
+          <div class="z-10 max-w-max rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-right text-sm dark:border-slate-800 dark:bg-slate-950 md:rounded-xl">
             {data.role}
             {data.timeText && (
               <span class="italic text-teal-600 dark:text-teal-400">
@@ -46,7 +46,7 @@ const { data, slug } = Astro.props.project;
       }
     </div>
   </div>
-  <p class="p-4 text-slate-700">{data.description}</p>
+  <p class="p-4">{data.description}</p>
 </a>
 
 <style></style>
