@@ -29,55 +29,70 @@ const { Content } = await entry.render();
 ---
 
 <StandardLayout title={entry.data.title} description={entry.data.description}>
-  <div class="stack gap-20">
-    <div class="stack gap-15">
-      <header>
-        <div class="wrapper stack gap-2">
-          <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
-          <SectionHeader title={entry.data.title} align="start">
+  <div class="flex flex-col gap-20">
+    <div class="gap-15 flex flex-col">
+      <header class="border-b border-slate-300 pb-10 dark:border-slate-700">
+        <div class="container flex flex-col gap-2">
+          <a href="/work/"
+            ><span
+              class="transition-color border-b border-transparent pb-0.5 text-teal-600 xjy-transition hover:border-teal-600 dark:text-teal-400 hover:dark:border-teal-600"
+              ><Icon icon="arrow-left" /> Work</span
+            ></a
+          >
+          <SectionHeader title={entry.data.title} align="items-start">
             {
               (entry.data.role ?? entry.data.timeText) && (
-                <div class="sub-heading">
+                <div class="-mt-3 text-left">
                   {entry.data.role && <p>{entry.data.role}</p>}
-                  {entry.data.timeText && <p class="time-text">{entry.data.timeText}</p>}
+                  {entry.data.timeText && (
+                    <p class="italic text-teal-600 dark:text-teal-400">
+                      {entry.data.timeText}
+                    </p>
+                  )}
                 </div>
               )
             }
           </SectionHeader>
 
-          <div class="details">
-            <div class="tags">
+          <div
+            class="grid items-center justify-between gap-6 py-2 md:grid-cols-2 md:gap-10"
+          >
+            <div class="flex flex-wrap gap-2">
               {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
             </div>
-            <p class="description">{entry.data.description}</p>
+            <p class="text-lg">{entry.data.description}</p>
           </div>
-          <div class="dates">
-            <p class="publish-date">
-              <strong>Date Published:</strong>&nbsp;
+          <div class="mt-4 text-right">
+            <p>
+              <span class="font-bold">Date Published:&nbsp;</span>
               {format(entry.data.pubDate, 'MMM dd, yyyy')}
             </p>
             {
               entry.data.lastModified && (
                 <p class="modified-date">
-                  <strong>Last Modified:</strong>&nbsp;
+                  <span class="font-bold">Last Modified:&nbsp;</span>
                   {format(entry.data.lastModified, 'MMM dd, yyyy')}
                 </p>
               )
             }
-						{
-							entry.data.editorsNote && (
-								<p class="editors-note">{entry.data.editorsNote}</p>
-							)
-						}
+            {
+              entry.data.editorsNote && (
+                <p class="editors-note">{entry.data.editorsNote}</p>
+              )
+            }
           </div>
         </div>
       </header>
-      <main class="wrapper">
-        <div class="stack gap-10 content">
-          {entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-          <div class="content">
-            <Content />
-          </div>
+      <main class="container mt-8">
+        <div
+          class="[&_a]:transition-color mx-auto flex max-w-[65ch] flex-col font-body [&_a]:text-teal-600 [&_a]:underline [&_a]:decoration-transparent [&_a]:underline-offset-[.25rem] [&_a]:xjy-transition hover:[&_a]:decoration-current dark:[&_a]:text-teal-400 [&_blockquote]:border-s-[0.25rem] [&_blockquote]:border-teal-600 [&_blockquote]:py-2 [&_blockquote]:ps-6 [&_blockquote]:font-brand [&_blockquote]:text-md [&_blockquote]:font-semibold [&_blockquote]:leading-tight dark:[&_blockquote]:border-teal-400 md:[&_blockquote]:text-lg [&_h1]:my-6 [&_h1]:font-brand [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:leading-tight [&_h2]:my-6 [&_h2]:font-brand [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-tight [&_h3]:my-6 [&_h3]:font-brand [&_h3]:text-xl [&_h3]:font-bold [&_h3]:leading-tight [&_h4]:my-6 [&_h4]:font-brand [&_h4]:text-lg [&_h4]:font-bold [&_h4]:leading-tight [&_h5]:my-6 [&_h5]:font-brand [&_h5]:text-md [&_h5]:font-bold [&_h5]:leading-tight [&_h6]:my-6 [&_h6]:font-brand [&_h6]:text-base [&_h6]:font-bold [&_h6]:leading-tight [&_img]:rounded-3xl [&_img]:shadow-md [&_img]:shadow-slate-700/10 dark:[&_img]:shadow-slate-300/10 md:[&_img]:shadow-lg [&_ul]:ms-8 [&_ul]:list-inside [&_ul]:list-disc"
+        >
+          {
+            entry.data.img && (
+              <img src={entry.data.img} alt={entry.data.img_alt || ''} />
+            )
+          }
+          <Content />
         </div>
       </main>
     </div>
@@ -85,148 +100,4 @@ const { Content } = await entry.render();
   </div>
 </StandardLayout>
 
-<style>
-  header {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--gray-800);
-  }
-
-	.dates {
-		margin-top: 1rem;
-	}
-
-  .publish-date,
-  .modified-date,
-	.editors-note {
-    text-align: right;
-  }
-
-  .back-link {
-    display: none;
-  }
-
-  .sub-heading {
-    margin-top: -1rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    font-size: var(--text-lg);
-  }
-
-  .time-text {
-    font-style: italic;
-    color: var(--accent-dark);
-  }
-
-  .details {
-    display: grid;
-    grid-template: auto auto / auto;
-    padding: 0.5rem;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .description {
-    font-size: var(--text-lg);
-    max-width: 54ch;
-  }
-
-  .content {
-    max-width: 65ch;
-    margin-inline: auto;
-  }
-
-  .content > :global(* + *) {
-    margin-top: 1rem;
-  }
-
-  .content :global(h1),
-  .content :global(h2),
-  .content :global(h3),
-  .content :global(h4),
-  .content :global(h5) {
-    margin: 1.5rem 0;
-  }
-
-  .content :global(h1) {
-    font-size: var(--text-3xl);
-  }
-
-  .content :global(h2) {
-    font-size: var(--text-2xl);
-  }
-
-  .content :global(h3) {
-    font-size: var(--text-xl);
-  }
-
-  .content :global(h4) {
-    font-size: var(--text-lg);
-  }
-
-  .content :global(h5) {
-    font-size: var(--text-md);
-  }
-
-  .content :global(h6) {
-    font-size: var(--text-base);
-  }
-
-  .content :global(img) {
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-sm);
-    background: var(--gradient-subtle);
-    border: 1px solid var(--gray-800);
-  }
-
-  .content :global(blockquote) {
-    font-size: var(--text-md);
-    font-family: var(--font-brand);
-    font-weight: 600;
-    line-height: 1.1;
-    padding-inline-start: 1.5rem;
-    border-inline-start: 0.25rem solid var(--accent-dark);
-    color: var(--gray-0);
-  }
-
-  .back-link,
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .back-link:hover,
-  .back-link:focus,
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
-  @media (min-width: 50em) {
-    .back-link {
-      display: block;
-      align-self: flex-start;
-    }
-
-    .sub-heading {
-      text-align: left;
-      margin-bottom: 0;
-    }
-
-    .details {
-      grid-template: auto / 1fr 1fr;
-      gap: 2.5rem;
-    }
-
-    .content :global(blockquote) {
-      font-size: var(--text-xl);
-    }
-  }
-</style>
+<style></style>
