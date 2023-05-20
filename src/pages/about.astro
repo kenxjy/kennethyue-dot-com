@@ -73,15 +73,21 @@ const skills = [
 ];
 ---
 
-<StandardLayout title={`About | ${NAME}`} description={`The about page of ${NAME}`}>
-  <div class="stack gap-20">
-    <main class="wrapper about">
+<StandardLayout
+  title={`About | ${NAME}`}
+  description={`The about page of ${NAME}`}
+>
+  <div class="flex flex-col gap-20">
+    <main
+      class="container flex flex-col gap-14 md:grid md:grid-cols-[1fr_60%_1fr] first:[&_>_*]:md:col-start-2"
+    >
       <SectionHeader title="About">
-        <div class="intro">
+        <div class="-mt-4 text-lg">
           Thank you for taking the time to stop by.<br />
           Read below to learn more about myself and my background
         </div>
         <img
+          class="mt-6 rounded-3xl shadow-lg shadow-slate-700/10 dark:shadow-slate-300/10"
           width="1553"
           height="873"
           src="/images/header-background.jpeg"
@@ -89,58 +95,90 @@ const skills = [
         />
       </SectionHeader>
 
-      <section>
-        <h2 class="section-title">Background</h2>
-        <div class="content stack gap-4">
+      <section
+        class="flex flex-col gap-2 text-slate-700 dark:text-slate-200 md:contents md:text-lg"
+      >
+        <h2
+          class="col-start-1 font-brand text-xl font-bold text-slate-900 dark:text-slate-100 md:text-3xl"
+        >
+          Background
+        </h2>
+        <div
+          class="col-start-2 col-end-4 flex flex-col gap-4 [&_a]:text-teal-600 [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-teal-400"
+        >
           <p>
-            Since a young age, my passion for technology has been unwavering. My parents wished for
-            me to pursue a career in medicine, and not wanting to disappoint them, I tried to
-            follow-through. Despite this, I've always been fascinated with the latest advancements
-            in computers and information technology. While studying life sciences at school, I
-            eagerly enrolled in computer programming courses whenever possible. And outside of
-            school, I spent my free time writing small programs, building computers, and tinkering
-            with servers. In 2017, I finally decided to pursue my passion and started my journey in
-            the IT industry by obtaining a diploma from Seneca College.
+            Since a young age, my passion for technology has been unwavering. My
+            parents wished for me to pursue a career in medicine, and not
+            wanting to disappoint them, I tried to follow-through. Despite this,
+            I've always been fascinated with the latest advancements in
+            computers and information technology. While studying life sciences
+            at school, I eagerly enrolled in computer programming courses
+            whenever possible. And outside of school, I spent my free time
+            writing small programs, building computers, and tinkering with
+            servers. In 2017, I finally decided to pursue my passion and started
+            my journey in the IT industry by obtaining a diploma from Seneca
+            College.
           </p>
           <p>
-            For me, the power and versatility of technology is what makes this field so exciting.
-            Being able to create tools and solutions that can make people's lives easier or more
-            efficient is incredibly satisfying. I still remember the first project I took on as a
-            professional, where I worked with a small company to develop a tool to speed up their
-            turnaround time. This help them expand their business online and attract clients from
-            all across Canada.
+            For me, the power and versatility of technology is what makes this
+            field so exciting. Being able to create tools and solutions that can
+            make people's lives easier or more efficient is incredibly
+            satisfying. I still remember the first project I took on as a
+            professional, where I worked with a small company to develop a tool
+            to speed up their turnaround time. This help them expand their
+            business online and attract clients from all across Canada.
           </p>
           <p>
-            One of the things I love about technology is that it's constantly evolving, with new
-            tools, frameworks, and technologies being released every day. As a developer, I'm always
-            eager to learn about these advancements and think about how they can be used to improve
-            my projects and enhance my skills. Keeping up with the rapid pace of change can be
-            challenging, but it's also part of what makes this field so exciting.
+            One of the things I love about technology is that it's constantly
+            evolving, with new tools, frameworks, and technologies being
+            released every day. As a developer, I'm always eager to learn about
+            these advancements and think about how they can be used to improve
+            my projects and enhance my skills. Keeping up with the rapid pace of
+            change can be challenging, but it's also part of what makes this
+            field so exciting.
           </p>
           <p>
-            When I'm not working, you can usually find me tinkering with servers. I have my own
-            personal homelab project where I experiment with various tools such as Ansible, Docker,
-            Kubernetes, Proxmox, and different storage solutions like MergerFS, SnapRAID, Unraid,
-            and TrueNAS. One of the best things about my homelab is that it allows me to learn new
-            skills while also having fun.
+            When I'm not working, you can usually find me tinkering with
+            servers. I have my own personal homelab project where I experiment
+            with various tools such as Ansible, Docker, Kubernetes, Proxmox, and
+            different storage solutions like MergerFS, SnapRAID, Unraid, and
+            TrueNAS. One of the best things about my homelab is that it allows
+            me to learn new skills while also having fun.
           </p>
           <p>
-            Another passion of mine is climbing. Since a friend introduced me to indoor climbing in
-            2018, I've been hooked. I love the mental and physical challenges that climbing
-            presents, and the feeling of accomplishment when I complete a difficult climb is truly
+            Another passion of mine is climbing. Since a friend introduced me to
+            indoor climbing in 2018, I've been hooked. I love the mental and
+            physical challenges that climbing presents, and the feeling of
+            accomplishment when I complete a difficult climb is truly
             exhilarating.
           </p>
         </div>
       </section>
-      <section>
-        <h2 class="section-title">Education</h2>
-        <div class="content stack gap-4">
+      <section
+        class="flex flex-col gap-2 text-slate-700 dark:text-slate-200 md:contents md:text-lg"
+      >
+        <h2
+          class="col-start-1 font-brand text-2xl font-bold text-slate-900 dark:text-slate-100 md:text-3xl"
+        >
+          Education
+        </h2>
+        <div
+          class="col-start-2 col-end-4 flex flex-col gap-4 [&_a]:text-teal-600 [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-teal-400"
+        >
           {education.map((value) => <EducationCard info={value} />)}
         </div>
       </section>
-      <section>
-        <h2 class="section-title">Skills</h2>
-        <div class="content skills">
+      <section
+        class="flex flex-col gap-2 text-slate-700 dark:text-slate-200 md:contents md:text-lg"
+      >
+        <h2
+          class="col-start-1 font-brand text-2xl font-bold text-slate-900 dark:text-slate-100 md:text-3xl"
+        >
+          Skills
+        </h2>
+        <div
+          class="col-start-2 col-end-4 grid grid-cols-1 md:grid-cols-3 [&_a]:text-teal-600 [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-teal-400"
+        >
           {skills.map((v) => <p>{v}</p>)}
         </div>
       </section>
@@ -150,86 +188,4 @@ const skills = [
   </div>
 </StandardLayout>
 
-<style>
-  .about {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
-  }
-
-  .intro {
-    font-size: var(--text-lg);
-    margin-top: -1rem;
-  }
-
-  .skills {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  img {
-    margin-top: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--gray-200);
-  }
-
-  .section-title {
-    grid-column-start: 1;
-    font-size: var(--text-xl);
-    color: var(--gray-0);
-  }
-
-  .content {
-    grid-column: 2 / 4;
-  }
-
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
-  @media (min-width: 27em) {
-    .skills {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (min-width: 50em) {
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 60% 1fr;
-    }
-
-    .intro {
-      font-size: var(--text-xl);
-    }
-
-    .about > :global(:first-child) {
-      grid-column-start: 2;
-    }
-
-    section {
-      display: contents;
-      font-size: var(--text-lg);
-    }
-  }
-
-  @media (min-width: 63em) {
-    .skills {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-</style>
+<style></style>
