@@ -70,8 +70,8 @@ const { showBackground = false } = Astro.props;
                 'inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-gray-900 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100',
                 Astro.url.pathname === href ||
                 (href !== '/' && Astro.url.pathname.startsWith(href))
-                  ? 'text-gray-950 dark:text-gray-50 md:bg-teal-500'
-                  : 'text-gray-500 hover:md:bg-teal-500/20 focus:md:bg-teal-500/20',
+                  ? 'text-gray-950 dark:text-gray-50 md:bg-primary'
+                  : 'text-gray-500 hover:md:bg-primary/20 focus:md:bg-primary/20',
               ]}
               href={href}
             >
@@ -85,13 +85,13 @@ const { showBackground = false } = Astro.props;
       class="flex justify-between gap-3 rounded-b-xl bg-gray-50 p-6 pr-8 shadow-xl shadow-gray-700/10 dark:bg-gray-950 dark:shadow-gray-300/10 md:items-center md:justify-end md:bg-transparent md:p-0 md:shadow-none dark:md:bg-transparent"
     >
       <div
-        class="min-[60em]:flex min-[60em]:justify-end min-[60em]:gap-0 flex flex-wrap gap-2 md:hidden"
+        class="flex flex-wrap gap-2 md:hidden min-[960px]:flex min-[960px]:justify-end min-[960px]:gap-0"
       >
         {
           iconLinks.map(({ href, icon, label }) => (
             <a
               href={href}
-              class="flex p-2 text-xl text-teal-600 transition-colors xjy-transition hover:text-gray-950 focus:text-gray-950 dark:text-teal-400 dark:hover:text-gray-50 dark:focus:text-gray-50 md:p-1.5"
+              class="flex p-2 text-xl text-primary-dark transition-colors xjy-transition hover:text-gray-950 focus:text-gray-950 dark:text-primary-light dark:hover:text-gray-50 dark:focus:text-gray-50 md:p-1.5"
             >
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />
