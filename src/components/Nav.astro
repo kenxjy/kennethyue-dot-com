@@ -27,14 +27,14 @@ const { showBackground = false } = Astro.props;
   class:list={[
     'z-50 relative mb-14 font-brand font-medium md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 md:px-20 md:py-10',
     showBackground
-      ? "bg-gradient-to-b from-slate-50 from-5% via-slate-50/50 via-40% to-transparent dark:from-slate-950 dark:via-slate-950/50 max-md:[&:has(button[aria-expanded='true'])]:bg-slate-50 max-md:dark:[&:has(button[aria-expanded='true'])]:bg-slate-950"
-      : 'bg-slate-50 dark:bg-slate-950',
+      ? "bg-gradient-to-b from-gray-50 from-5% via-gray-50/50 via-40% to-transparent dark:from-gray-950 dark:via-gray-950/50 max-md:[&:has(button[aria-expanded='true'])]:bg-gray-50 max-md:dark:[&:has(button[aria-expanded='true'])]:bg-gray-950"
+      : 'bg-gray-50 dark:bg-gray-950',
   ]}
 >
   <div class="flex justify-between gap-2 p-6 md:p-0">
     <a
       href="/"
-      class="flex items-center gap-2 leading-tight text-slate-950 dark:text-slate-50 md:text-lg"
+      class="flex items-center gap-2 leading-tight text-gray-950 dark:text-gray-50 md:text-lg"
     >
       <Icon
         icon="terminal-window"
@@ -47,7 +47,7 @@ const { showBackground = false } = Astro.props;
     <menu-button>
       <template>
         <button
-          class="relative flex rounded-full bg-slate-100 p-2 text-xl text-slate-700 shadow-lg shadow-slate-700/10 aria-expanded:bg-gradient-to-b aria-expanded:from-slate-300 aria-expanded:to-transparent aria-expanded:text-slate-950 dark:bg-slate-800 dark:text-slate-300 dark:shadow-slate-300/10 dark:aria-expanded:from-slate-700 dark:aria-expanded:text-slate-50 [&[hidden]]:hidden"
+          class="relative flex rounded-full bg-gray-100 p-2 text-xl text-gray-700 shadow-lg shadow-gray-700/10 aria-expanded:bg-gradient-to-b aria-expanded:from-gray-300 aria-expanded:to-transparent aria-expanded:text-gray-950 dark:bg-gray-800 dark:text-gray-300 dark:shadow-gray-300/10 dark:aria-expanded:from-gray-700 dark:aria-expanded:text-gray-50 [&[hidden]]:hidden"
           aria-expanded="false"
         >
           <span class="sr-only">Menu</span>
@@ -58,20 +58,20 @@ const { showBackground = false } = Astro.props;
   </div>
   <div id="menu-content" class="absolute left-0 right-0 z-40 md:contents">
     <ul
-      class="m-0 flex flex-col gap-4 border-b border-slate-200 bg-slate-50 p-8 text-md leading-tight dark:border-slate-800 dark:bg-slate-950 md:relative md:flex-row md:rounded-full md:border-0 md:bg-gradient-to-b md:from-slate-200 md:to-slate-100 md:px-[0.5625rem] md:py-2 md:text-sm md:shadow-lg md:shadow-slate-700/10 dark:md:from-slate-800 dark:md:to-slate-900 dark:md:shadow-slate-300/10"
+      class="m-0 flex flex-col gap-4 border-b border-gray-200 bg-gray-50 p-8 text-md leading-tight dark:border-gray-800 dark:bg-gray-950 md:relative md:flex-row md:rounded-full md:border-0 md:bg-gradient-to-b md:from-gray-200 md:to-gray-100 md:px-[0.5625rem] md:py-2 md:text-sm md:shadow-lg md:shadow-gray-700/10 dark:md:from-gray-800 dark:md:to-gray-900 dark:md:shadow-gray-300/10"
     >
       {
         textLinks.map(({ label, href }) => (
           <li>
             <a
-              class="inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-slate-900 focus:md:text-slate-900 hover:dark:md:text-slate-100 focus:dark:md:text-slate-100"
+              class="inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-gray-900 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100"
               aria-current={Astro.url.pathname === href}
               class:list={[
-                'inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-slate-900 focus:md:text-slate-900 hover:dark:md:text-slate-100 focus:dark:md:text-slate-100',
+                'inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-gray-900 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100',
                 Astro.url.pathname === href ||
                 (href !== '/' && Astro.url.pathname.startsWith(href))
-                  ? 'text-slate-950 dark:text-slate-50 md:bg-teal-500'
-                  : 'text-slate-500 hover:md:bg-teal-500/20 focus:md:bg-teal-500/20',
+                  ? 'text-gray-950 dark:text-gray-50 md:bg-teal-500'
+                  : 'text-gray-500 hover:md:bg-teal-500/20 focus:md:bg-teal-500/20',
               ]}
               href={href}
             >
@@ -82,7 +82,7 @@ const { showBackground = false } = Astro.props;
       }
     </ul>
     <div
-      class="flex justify-between gap-3 rounded-b-xl bg-slate-50 p-6 pr-8 shadow-xl shadow-slate-700/10 dark:bg-slate-950 dark:shadow-slate-300/10 md:items-center md:justify-end md:bg-transparent md:p-0 md:shadow-none dark:md:bg-transparent"
+      class="flex justify-between gap-3 rounded-b-xl bg-gray-50 p-6 pr-8 shadow-xl shadow-gray-700/10 dark:bg-gray-950 dark:shadow-gray-300/10 md:items-center md:justify-end md:bg-transparent md:p-0 md:shadow-none dark:md:bg-transparent"
     >
       <div
         class="min-[60em]:flex min-[60em]:justify-end min-[60em]:gap-0 flex flex-wrap gap-2 md:hidden"
@@ -91,7 +91,7 @@ const { showBackground = false } = Astro.props;
           iconLinks.map(({ href, icon, label }) => (
             <a
               href={href}
-              class="flex p-2 text-xl text-teal-600 transition-colors xjy-transition hover:text-slate-950 focus:text-slate-950 dark:text-teal-400 dark:hover:text-slate-50 dark:focus:text-slate-50 md:p-1.5"
+              class="flex p-2 text-xl text-teal-600 transition-colors xjy-transition hover:text-gray-950 focus:text-gray-950 dark:text-teal-400 dark:hover:text-gray-50 dark:focus:text-gray-50 md:p-1.5"
             >
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />

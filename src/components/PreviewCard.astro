@@ -9,7 +9,7 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="mx-auto grid min-h-[24em] max-w-lg auto-cols-auto grid-rows-[26.5em_auto] overflow-hidden rounded-xl border border-slate-300 text-slate-600 shadow-md shadow-slate-700/10 transition-shadow xjy-transition hover:shadow-lg dark:border-slate-700 dark:text-slate-400 dark:shadow-slate-300/10 md:rounded-2xl [&_#title]:hover:decoration-current"
+  class="mx-auto grid min-h-[24em] max-w-lg auto-cols-auto grid-rows-[26.5em_auto] overflow-hidden rounded-xl border border-gray-300 text-gray-600 shadow-md shadow-gray-700/10 transition-shadow xjy-transition hover:shadow-lg dark:border-gray-700 dark:text-gray-400 dark:shadow-gray-300/10 md:rounded-2xl [&_#title]:hover:decoration-current"
   href={`/work/${slug}`}
 >
   <div
@@ -17,7 +17,7 @@ const { data, slug } = Astro.props.project;
   >
     <div
       id="title"
-      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 font-brand text-lg font-medium text-teal-600 underline decoration-transparent underline-offset-[0.25em] transition-colors xjy-transition dark:border-slate-800 dark:bg-slate-950 dark:text-teal-400 md:rounded-xl"
+      class="z-10 col-start-1 col-end-2 row-start-1 row-end-2 m-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 font-brand text-lg font-medium text-teal-600 underline decoration-transparent underline-offset-[0.25em] transition-colors xjy-transition dark:border-gray-800 dark:bg-gray-950 dark:text-teal-400 md:rounded-xl"
     >
       {data.title}
     </div>
@@ -33,7 +33,7 @@ const { data, slug } = Astro.props.project;
     >
       {
         data.role && (
-          <div class="z-10 max-w-max rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-right text-sm dark:border-slate-800 dark:bg-slate-950 md:rounded-xl">
+          <div class="z-10 max-w-max rounded-lg border border-gray-200 bg-gray-50 px-2 py-1 text-right text-sm dark:border-gray-800 dark:bg-gray-950 md:rounded-xl">
             {data.role}
             {data.timeText && (
               <span class="italic text-teal-600 dark:text-teal-400">
