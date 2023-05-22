@@ -31,14 +31,14 @@ module.exports = {
         lg: '1328px',
       },
       padding: {
-        DEFAULT: '1.5rem'
+        DEFAULT: '1.5rem',
       },
-      center: true
+      center: true,
     },
     extend: {
       height: {
-        'screen-sm': ['100vh /* Fallback */','100svh'],
-      }
+        'screen-sm': ['100vh /* Fallback */', '100svh'],
+      },
     },
   },
   plugins: [
@@ -47,7 +47,14 @@ module.exports = {
       addUtilities({
         '.xjy-transition': {
           '@apply duration-200 ease-in-out': {},
-        }
+        },
+        '.sr-only': {
+          '@apply absolute p-0 overflow-hidden whitespace-nowrap border-0': {},
+          width: '1px',
+          height: '1px',
+          margin: '-1px',
+          clip: 'rect(0, 0, 0, 0)',
+        },
       });
     }),
   ],
