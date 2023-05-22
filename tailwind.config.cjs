@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const plugin = require('tailwindcss/plugin');
-const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -38,31 +37,6 @@ module.exports = {
     extend: {
       height: {
         'screen-sm': ['100vh /* Fallback */', '100svh'],
-      },
-      colors: {
-        primary: {
-          dark: '#03606D',
-          DEFAULT: '#10808F',
-          light: '#42B3C2',
-        },
-        accent: {
-          dark: '#DF4543',
-          DEFAULT: '#EF6F6C',
-          light: '#FF9A98',
-        },
-        gray: {
-          50: '#F8F9FA',
-          100: '#F2F4F6',
-          200: '#E9ECEF',
-          300: '#CED4DA',
-          400: '#ADB5BD',
-          500: '#6F7981',
-          600: '#4E555C',
-          700: '#3F454C',
-          800: '#2C3237',
-          900: '#1F2226',
-          950: '#0E0F11',
-        },
       },
     },
   },
