@@ -23,35 +23,55 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 const { showBackground = false } = Astro.props;
 ---
 
-<nav class:list={ showBackground ? ['nav-background'] : null}>
-  <div class="menu-header">
-    <a href="/" class="site-title">
-      <Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+<nav
+  class:list={[
+    'z-50 relative mb-14 font-brand font-medium md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 md:px-20 md:py-10',
+    showBackground
+      ? "bg-gradient-to-b from-slate-50 from-5% via-slate-50/50 via-40% to-transparent dark:from-slate-950 dark:via-slate-950/50 max-md:[&:has(button[aria-expanded='true'])]:bg-slate-50 max-md:dark:[&:has(button[aria-expanded='true'])]:bg-slate-950"
+      : 'bg-slate-50 dark:bg-slate-950',
+  ]}
+>
+  <div class="flex justify-between gap-2 p-6 md:p-0">
+    <a
+      href="/"
+      class="site-title flex items-center gap-2 leading-tight text-slate-950 dark:text-slate-50 md:text-lg"
+    >
+      <Icon
+        icon="terminal-window"
+        color="var(--accent-regular)"
+        size="1.6em"
+        gradient
+      />
       {NAME}
     </a>
     <menu-button>
       <template>
-        <button class="menu-button" aria-expanded="false">
+        <button
+          class="relative flex rounded-full bg-slate-100 p-2 text-xl text-slate-700 shadow-lg shadow-slate-700/10 aria-expanded:bg-gradient-to-b aria-expanded:from-slate-300 aria-expanded:to-transparent aria-expanded:text-slate-950 dark:bg-slate-800 dark:text-slate-300 dark:shadow-slate-300/10 dark:aria-expanded:from-slate-700 dark:aria-expanded:text-slate-50 [&[hidden]]:hidden"
+          aria-expanded="false"
+        >
           <span class="sr-only">Menu</span>
           <Icon icon="list" />
         </button>
       </template>
     </menu-button>
   </div>
-  <div id="menu-content">
-    <ul class="nav-items">
+  <div id="menu-content" class="absolute left-0 right-0 z-40 md:contents">
+    <ul
+      class="m-0 flex flex-col gap-4 border-b border-slate-200 bg-slate-50 p-8 text-md leading-tight dark:border-slate-800 dark:bg-slate-950 md:relative md:flex-row md:rounded-full md:border-0 md:bg-gradient-to-b md:from-slate-200 md:to-slate-100 md:px-[0.5625rem] md:py-2 md:text-sm md:shadow-lg md:shadow-slate-700/10 dark:md:from-slate-800 dark:md:to-slate-900 dark:md:shadow-slate-300/10"
+    >
       {
         textLinks.map(({ label, href }) => (
           <li>
             <a
+              class="inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-slate-900 focus:md:text-slate-900 hover:dark:md:text-slate-100 focus:dark:md:text-slate-100"
               aria-current={Astro.url.pathname === href}
               class:list={[
-                'link',
-                {
-                  active:
-                    Astro.url.pathname === href ||
-                    (href !== '/' && Astro.url.pathname.startsWith(href)),
-                },
+                'inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-slate-900 focus:md:text-slate-900 hover:dark:md:text-slate-100 focus:dark:md:text-slate-100',
+                Astro.url.pathname === href ||
+                (href !== '/' && Astro.url.pathname.startsWith(href))
+                  ? 'text-slate-950 dark:text-slate-50 md:bg-teal-500'
+                  : 'text-slate-500 hover:md:bg-teal-500/20 focus:md:bg-teal-500/20',
               ]}
               href={href}
             >
@@ -61,11 +81,18 @@ const { showBackground = false } = Astro.props;
         ))
       }
     </ul>
-    <div class="menu-footer">
-      <div class="socials">
+    <div
+      class="flex justify-between gap-3 rounded-b-xl bg-slate-50 p-6 pr-8 shadow-xl shadow-slate-700/10 dark:bg-slate-950 dark:shadow-slate-300/10 md:items-center md:justify-end md:bg-transparent md:p-0 md:shadow-none dark:md:bg-transparent"
+    >
+      <div
+        class="flex flex-wrap gap-2 md:hidden min-[60em]:flex min-[60em]:justify-end min-[60em]:gap-0"
+      >
         {
           iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
+            <a
+              href={href}
+              class="flex p-2 text-xl text-teal-600 transition-colors xjy-transition hover:text-slate-950 focus:text-slate-950 dark:text-teal-400 dark:hover:text-slate-50 dark:focus:text-slate-50 md:p-1.5"
+            >
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />
             </a>
@@ -73,7 +100,9 @@ const { showBackground = false } = Astro.props;
         }
       </div>
 
-      <div class="theme-toggle">
+      <div
+        class="flex h-[calc(theme(fontSize.xl)+2*theme(spacing.2))] items-center"
+      >
         <ThemeToggle />
       </div>
     </div>
@@ -115,223 +144,4 @@ const { showBackground = false } = Astro.props;
   customElements.define('menu-button', MenuButton);
 </script>
 
-<style>
-  nav {
-    z-index: 9999;
-    position: relative;
-    font-family: var(--font-brand);
-    font-weight: 500;
-    margin-bottom: 3.5rem;
-  }
-
-	nav.nav-background {
-      background: var(--gray-999);
-      background: linear-gradient(
-        180deg,
-        hsla(var(--gray-999-basis), 1) 0%,
-        hsla(var(--gray-999-basis), 0.5) 40%,
-        hsla(var(--gray-999-basis), 0) 95%
-      );
-    }
-
-  .menu-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 1.5rem;
-  }
-
-  .site-title {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    line-height: 1.1;
-    color: var(--gray-0);
-    text-decoration: none;
-  }
-
-  .menu-button {
-    position: relative;
-    display: flex;
-    border: 0;
-    border-radius: 999rem;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    color: var(--gray-300);
-    background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-    box-shadow: var(--shadow-md);
-  }
-
-  .menu-button[aria-expanded='true'] {
-    color: var(--gray-0);
-    background: linear-gradient(180deg, var(--gray-600), transparent),
-      radial-gradient(var(--gray-900), var(--gray-800) 150%);
-  }
-
-  .menu-button[hidden] {
-    display: none;
-  }
-
-  .menu-button::before {
-    position: absolute;
-    inset: -1px;
-    content: '';
-    background: var(--gradient-stroke);
-    border-radius: 999rem;
-    z-index: -1;
-  }
-
-  #menu-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-
-  .nav-items {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: var(--text-md);
-    line-height: 1.2;
-    list-style: none;
-    padding: 2rem;
-    background-color: var(--gray-999);
-    border-bottom: 1px solid var(--gray-800);
-  }
-
-  .link {
-    display: inline-block;
-    color: var(--gray-300);
-    text-decoration: none;
-  }
-
-  .link.active {
-    color: var(--gray-0);
-  }
-
-  .menu-footer {
-    --icon-size: var(--text-xl);
-    --icon-padding: 0.5rem;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 1.5rem 2rem 1.5rem 1.5rem;
-    background-color: var(--gray-999);
-    border-radius: 0 0 0.75rem 0.75rem;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    font-size: var(--icon-size);
-  }
-
-  .social {
-    display: flex;
-    padding: var(--icon-padding);
-    text-decoration: none;
-    color: var(--accent-dark);
-    transition: color var(--theme-transition);
-  }
-
-  .social:hover,
-  .social:focus {
-    color: var(--accent-text-over);
-  }
-
-  .theme-toggle {
-    display: flex;
-    align-items: center;
-    height: calc(var(--icon-size) + 2 * var(--icon-padding));
-  }
-
-  @media (min-width: 50em) {
-    nav {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 2.5rem 5rem;
-      gap: 1rem;
-    }
-
-    .menu-header {
-      padding: 0;
-    }
-
-    .site-title {
-      font-size: var(--text-lg);
-    }
-
-    #menu-content {
-      display: contents;
-    }
-
-    .nav-items {
-      position: relative;
-      flex-direction: row;
-      font-size: var(--text-sm);
-      border-radius: 999rem;
-      border: 0;
-      padding: 0.5rem 0.5625rem;
-      background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-      box-shadow: var(--shadow-md);
-    }
-
-    .nav-items::before {
-      position: absolute;
-      inset: -1px;
-      content: '';
-      background: var(--gradient-stroke);
-      border-radius: 999rem;
-      z-index: -1;
-    }
-
-    .link {
-      padding: 0.5rem 1rem;
-      border-radius: 999rem;
-      transition: color var(--theme-transition), background-color var(--theme-transition);
-    }
-
-    .link:hover,
-    .link:focus {
-      color: var(--gray-100);
-      background-color: var(--accent-subtle-overlay);
-    }
-
-    .link.active {
-      color: var(--accent-text-over);
-      background-color: var(--accent-regular);
-    }
-
-    .menu-footer {
-      --icon-padding: 0.375rem;
-
-      justify-self: flex-end;
-      align-items: center;
-      padding: 0;
-      background-color: transparent;
-      box-shadow: none;
-    }
-
-    .socials {
-      display: none;
-    }
-  }
-
-  @media (min-width: 60em) {
-    .socials {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0;
-    }
-  }
-  @media (forced-colors: active) {
-    .link.active {
-      color: SelectedItem;
-    }
-  }
-</style>
+<style></style>
