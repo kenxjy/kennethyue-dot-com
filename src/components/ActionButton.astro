@@ -12,7 +12,7 @@ const { href, lgFontSize = 'text-xl', fontSize = 'text-lg' } = Astro.props;
 
 <a
   class:list={[
-    "relative flex place-content-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-accent via-primary to-primary-dark px-8 py-2 text-center text-lg leading-tight text-gray-50 no-underline shadow-md after:pointer-events-none after:absolute after:inset-0 after:mix-blend-overlay after:transition-colors after:duration-200 after:ease-in-out after:content-[''] hover:after:bg-gray-50/30 focus:after:bg-gray-50/30 dark:hover:after:bg-gray-950/30 dark:focus:after:bg-gray-950/30 md:px-10 md:py-5 md:text-xl",
+    "relative flex place-content-center gap-3 overflow-hidden rounded-full bg-gradient-to-br from-accent via-primary to-primary-dark px-8 py-2 text-center text-lg leading-tight text-gray-50 no-underline shadow-md after:pointer-events-none after:absolute after:inset-0 after:mix-blend-overlay after:transition-colors after:duration-200 after:ease-in-out after:content-[''] hocus:after:bg-gray-50/30 dark:hocus:after:bg-gray-950/30 md:px-10 md:py-5 md:text-xl",
     fontSize,
     `md:${lgFontSize}`,
   ]}

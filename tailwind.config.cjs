@@ -77,7 +77,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addBase, addUtilities, theme }) => {
+    plugin(({ addBase, addUtilities, addVariant, theme }) => {
       // Add your custom styles here
       // addBase({
       //   ':root': {
@@ -104,6 +104,8 @@ module.exports = {
           clip: 'rect(0, 0, 0, 0)',
         },
       });
+
+      addVariant('hocus', ['&:hover', '&:focus']);
     }),
   ],
 };
