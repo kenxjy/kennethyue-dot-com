@@ -27,16 +27,23 @@ const {
   titleFontSize = 'text-3xl md:text-5xl',
   taglineFontSize = 'text-lg md:text-xl',
 } = Astro.props;
+
+const lineAlignment: Record<ItemsPositionClass, string> = {
+  'items-center': 'max-md:after:right-[calc(50%-50px)]',
+  'items-start': 'max-md:after:left-0',
+  'items-end': 'max-md:after:right-0',
+};
 ---
 
 <header class:list={['flex flex-col text-center gap-4', align]}>
   <div class="flex max-w-md flex-col gap-2">
     <h1
       class:list={[
-        'relative mx-auto my-6 break-words font-brand font-bold after:-bottom-2 after:w-[100px] after:right-[calc(50%-50px)] bna:absolute bna:h-[1px] before:md:-top-3 before:md:left-0 after:md:-bottom-3 after:md:right-0 bna:md:w-7/12',
+        'relative mx-auto my-6 break-words font-brand font-bold after:-bottom-2 after:w-[100px] bna:absolute bna:h-[1px] before:md:-top-3 before:md:left-0 after:md:-bottom-3 after:md:right-0 bna:md:w-7/12',
         color,
         titleFontSize,
         lineColor,
+        lineAlignment[align],
       ]}
     >
       {title}
