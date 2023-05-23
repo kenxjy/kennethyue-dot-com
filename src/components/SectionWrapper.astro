@@ -9,14 +9,11 @@ interface Props {
 const { flex = true, align = 'items-center' } = Astro.props;
 let classList: [string, ItemsPositionClass] = null;
 if (flex) {
-  classList = [
-    'flex flex-col',
-    align
-  ];
+  classList = ['flex flex-col', align];
 }
 ---
 
-<section class:list={["container md:px-12", classList]}>
+<section class:list={['container md:px-12', classList]}>
   <slot />
 </section>
 

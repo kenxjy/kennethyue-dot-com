@@ -1,8 +1,5 @@
 {
-  "cSpell.words": [
-    "Pineapping",
-    "Symes"
-  ],
+  "cSpell.words": ["Pineapping", "Symes"],
   "cSpell.ignorePaths": [
     "package-lock.json",
     "node_modules",
@@ -17,10 +14,7 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "tailwindCSS.classAttributes": [
-    "class",
-    "class:list"
-  ],
+  "tailwindCSS.classAttributes": ["class", "class:list"],
   "editor.wordWrapColumn": 120,
   "editor.wordWrap": "wordWrapColumn"
 }

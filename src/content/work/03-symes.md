@@ -1,8 +1,8 @@
 ---
 title: The Symes
-pubDate: 2023-04-18'
+pubDate: 2023-04-18
 # lastModified:
-# editorsNote: 
+# editorsNote:
 role: Full-Stack Developer
 startDate: 2019-10-01
 endDate: null
@@ -11,7 +11,7 @@ img: /images/symes.jpg
 img_alt: The Symes Logo
 description: |
   The Symes is one of the top venues in Toronto, primarily focused on weddings and private events.
-  Together we built a new comprehensive customer relationship management (CRM) application from the ground to up manage their operations from start to finish. 
+  Together we built a new comprehensive customer relationship management (CRM) application from the ground to up manage their operations from start to finish.
 tags:
   - Full Stack
   - Angular 2+
@@ -20,17 +20,18 @@ tags:
 ---
 
 ### Job Overview
-  - Designed and developed front-end SPA.
-  - Designed and developed serverless APIs using Google Cloud Functions.
-  - Wrote scripts for automated data migration.
-  - Weekly meetings with project manager for sprint planning and review.
-  - Maintain and update internal software
+
+- Designed and developed front-end SPA.
+- Designed and developed serverless APIs using Google Cloud Functions.
+- Wrote scripts for automated data migration.
+- Weekly meetings with project manager for sprint planning and review.
+- Maintain and update internal software
 
 # A New Journey: Developing a Comprehensive System
 
 ## Starting from scratch: Round Two
 
-Following the success of my collaboration with [Warranty Claim Services](./02-wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging. 
+Following the success of my collaboration with [Warranty Claim Services](./02-wcs), I dove in head first into a new project with [The Symes](https://thesymes.ca), a company that had a vision of what they wanted in their customer relationship management (CRM) application. However, we were starting from square one, which made the development process challenging.
 
 ## The Development Process
 

@@ -5,5 +5,5 @@ export const OG_IMAGE = BASE_URL + 'images/og-image.jpg';
 export const LINKS = {
   email: 'mailto:' + EMAIL,
   linkedin: 'https://www.linkedin.com/in/kenxjy',
-  github: 'https://github.com/kenxjy'
+  github: 'https://github.com/kenxjy',
 } as const;
