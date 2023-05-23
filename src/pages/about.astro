@@ -177,9 +177,13 @@ const skills = [
           Skills
         </h2>
         <div
-          class="col-start-2 grid grid-cols-1 md:grid-cols-3 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
+          class="col-start-2 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
         >
-          {skills.map((v) => <p>{v}</p>)}
+          <div
+            class="columns-1 gap-8 min-[432px]:columns-2 min-[1080px]:columns-3"
+          >
+            {skills.map((v) => <p>{v}</p>)}
+          </div>
         </div>
       </section>
     </main>
