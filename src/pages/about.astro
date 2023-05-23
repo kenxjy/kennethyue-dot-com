@@ -79,7 +79,7 @@ const skills = [
 >
   <div class="flex flex-col gap-20">
     <main
-      class="container flex flex-col gap-14 md:grid md:grid-cols-[1fr_60%_1fr] first:[&_>_*]:md:col-start-2"
+      class="container flex flex-col gap-14 md:grid md:grid-cols-[1fr_auto] first:[&_>_*]:md:col-start-1 first:[&_>_*]:md:col-end-3 first:[&_>_*]:md:mx-auto first:[&_>_*]:md:max-w-[60%]"
     >
       <SectionHeader title="About">
         <div class="-mt-4 text-lg">
@@ -99,12 +99,12 @@ const skills = [
         class="flex flex-col gap-2 text-gray-700 dark:text-gray-200 md:contents md:text-lg"
       >
         <h2
-          class="col-start-1 font-brand text-xl font-bold text-gray-900 dark:text-gray-100 md:text-3xl"
+          class="col-start-1 font-brand text-xl font-bold text-gray-900 dark:text-gray-100 md:text-2xl"
         >
           Background
         </h2>
         <div
-          class="col-start-2 col-end-4 flex flex-col gap-4 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
+          class="col-start-2 flex flex-col gap-4 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
         >
           <p>
             Since a young age, my passion for technology has been unwavering. My
@@ -158,12 +158,12 @@ const skills = [
         class="flex flex-col gap-2 text-gray-700 dark:text-gray-200 md:contents md:text-lg"
       >
         <h2
-          class="col-start-1 font-brand text-2xl font-bold text-gray-900 dark:text-gray-100 md:text-3xl"
+          class="col-start-1 font-brand text-xl font-bold text-gray-900 dark:text-gray-100 md:text-2xl"
         >
           Education
         </h2>
         <div
-          class="col-start-2 col-end-4 flex flex-col gap-4 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
+          class="col-start-2 flex flex-col gap-4 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
         >
           {education.map((value) => <EducationCard info={value} />)}
         </div>
@@ -172,12 +172,12 @@ const skills = [
         class="flex flex-col gap-2 text-gray-700 dark:text-gray-200 md:contents md:text-lg"
       >
         <h2
-          class="col-start-1 font-brand text-2xl font-bold text-gray-900 dark:text-gray-100 md:text-3xl"
+          class="col-start-1 font-brand text-xl font-bold text-gray-900 dark:text-gray-100 md:text-2xl"
         >
           Skills
         </h2>
         <div
-          class="col-start-2 col-end-4 grid grid-cols-1 md:grid-cols-3 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
+          class="col-start-2 grid grid-cols-1 md:grid-cols-3 [&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-transparent [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:xjy-transition hover:[&_a]:decoration-current [&_a]:dark:text-primary-light"
         >
           {skills.map((v) => <p>{v}</p>)}
         </div>
