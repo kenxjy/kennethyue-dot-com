@@ -106,6 +106,7 @@ module.exports = {
       });
 
       addVariant('hocus', ['&:hover', '&:focus']);
+      addVariant('bna', ['&::before', '&::after']);
     }),
   ],
 };
