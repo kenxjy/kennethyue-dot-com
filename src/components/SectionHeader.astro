@@ -16,6 +16,7 @@ interface Props {
   align?: ItemsPositionClass;
   titleFontSize?: FontSizes;
   taglineFontSize?: FontSizes;
+  maxWidth?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   lineColor = 'bna:bg-gray-700 dark:bna:bg-gray-200',
   titleFontSize = 'text-3xl md:text-5xl',
   taglineFontSize = 'text-lg md:text-xl',
+  maxWidth,
 } = Astro.props;
 
 const lineAlignment: Record<ItemsPositionClass, string> = {
@@ -36,7 +38,7 @@ const lineAlignment: Record<ItemsPositionClass, string> = {
 ---
 
 <header class:list={['flex flex-col text-center gap-4', align]}>
-  <div class="flex max-w-md flex-col gap-2">
+  <div class:list={['flex flex-col gap-2', maxWidth]}>
     <h1
       class:list={[
         'relative mx-auto my-6 break-words font-brand font-bold after:-bottom-2 after:w-[100px] bna:absolute bna:h-[1px] before:md:-top-3 before:md:left-0 after:md:-bottom-3 after:md:right-0 bna:md:w-7/12',
