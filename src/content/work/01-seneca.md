@@ -2,7 +2,7 @@
 title: Seneca College
 pubDate: 2023-04-18
 # lastModified:
-# editorsNote: 
+# editorsNote:
 role: Computer Programming Diploma
 startDate: 2017-09-01
 endDate: 2019-04-01
@@ -17,12 +17,13 @@ tags:
 ---
 
 ### Program Syllabus
-  - Fundamentals of Object-Oriented Programming
-  - Basics of Web Development (HTML CSS, JavaScript)
-  - Modern Web Development (React, Angular)
-  - Client and server side development
-  - Design and maintenance of database systems
-  - Data communication
+
+- Fundamentals of Object-Oriented Programming
+- Basics of Web Development (HTML CSS, JavaScript)
+- Modern Web Development (React, Angular)
+- Client and server side development
+- Design and maintenance of database systems
+- Data communication
 
 # The Start of My Journey as a Software Developer
 

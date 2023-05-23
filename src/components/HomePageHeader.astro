@@ -1,72 +1,30 @@
 ---
-import SectionHeader from "./SectionHeader.astro";
-import { NAME } from "../scripts/globals";
-import Nav from "./Nav.astro";
-
-
+import SectionHeader from './SectionHeader.astro';
+import { NAME } from '../scripts/globals';
+import Nav from './Nav.astro';
 ---
-<div id="pre-page-spacer"></div>
-<div id="background"></div>
-<div id="home-page-header">
+
+<div
+  class="fixed bottom-[calc(100vh-1px)] left-0 right-0 h-screen bg-gray-50 dark:bg-gray-950"
+>
+</div>
+<div
+  class="fixed top-0 -z-10 h-screen-sm w-full bg-[url('/images/portrait/20230429_portrait_lg.jpg')] bg-cover bg-center"
+>
+</div>
+<div class="grid h-screen-sm auto-cols-auto grid-rows-[auto_1fr]">
   <Nav showBackground={true} />
-  <div id="title-container">
+  <div
+    class="m-0 flex h-[45svh] items-end justify-center self-end bg-gradient-to-t from-gray-50 from-5% via-gray-50/50 via-40% to-transparent to-100% px-8 pb-[7vh] dark:from-gray-950 dark:via-gray-950/50"
+  >
     <SectionHeader
-      color="var(--gray-0)"
+      color="text-gray-900 dark:text-gray-50"
+      lineColor="bna:bg-gray-900 bna:dark:bg-gray-50"
       title={NAME}
       tagline="Hello! I am a Software Developer currently based in Toronto, Ontario"
+      maxWidth="max-w-md"
     />
   </div>
 </div>
 
-<style>
-  i {
-    margin-bottom: 0.25rem;
-  }
-
-  #home-page-header {
-    height: 100vh;
-    height: 100svh;
-    display: grid;
-    grid-template: auto 1fr auto / auto;
-  }
-
-  #pre-page-spacer {
-    position: fixed;
-    bottom: 100vh;
-    height: 100svh;
-    left: 0;
-    right: 0;
-    top: -100vh;
-    background: var(--gray-999);
-  }
-  
-  #title-container {
-    grid-area: 3 / 1;
-    height: 45vh;
-    height: 45svh;
-    padding: 5vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-    background: var(--gray-999);
-		background: linear-gradient(
-			0deg,
-			hsla(var(--gray-999-basis), 1) 0%,
-			hsla(var(--gray-999-basis), 0.5) 40%,
-			hsla(var(--gray-999-basis), 0) 100%
-		);
-  }
-
-  #background {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    position: fixed;
-    top: 0;
-    z-index: -2;
-    background-image: url('/images/portrait/20230429_portrait_lg.jpg');
-    background-position: center;
-    background-size: cover;
-  }
-</style>
+<style></style>

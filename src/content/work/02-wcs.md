@@ -2,7 +2,7 @@
 title: Warranty Claim Services
 pubDate: 2023-04-18
 # lastModified:
-# editorsNote: 
+# editorsNote:
 role: Freelance Web Developer
 startDate: 2019-04-01
 endDate: 2020-04-01
@@ -20,11 +20,12 @@ tags:
 ---
 
 ### Job Overview
-  - Designed, setup and maintained databases.
-  - Designed and developed REST API.
-  - Designed and developed Front-end SPA.
-  - Weekly meetings with project manager for sprint planning and review.
-  - Provided phone and email tech support to customers.
+
+- Designed, setup and maintained databases.
+- Designed and developed REST API.
+- Designed and developed Front-end SPA.
+- Weekly meetings with project manager for sprint planning and review.
+- Provided phone and email tech support to customers.
 
 # Building an Application from Scratch: A Success Story
 

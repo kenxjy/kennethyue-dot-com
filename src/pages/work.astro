@@ -16,10 +16,13 @@ const workExperience = await getWorkCollection();
   title={`My Journey So Far | ${NAME}`}
   description={`Learn about ${NAME}'s most recent work experience and projects`}
 >
-  <div class="stack gap-20">
-    <main class="wrapper stack gap-8">
-      <SectionWrapper flex={true}>
-        <SectionHeader title="My Journey So Far" tagline="See below to get an idea of my past experience." />
+  <div class="flex flex-col">
+    <main class="flex flex-col">
+      <SectionWrapper>
+        <SectionHeader
+          title="My Journey So Far"
+          tagline="See below to get an idea of my past experience."
+        />
         <PreviewList>
           {
             workExperience.map((project) => (

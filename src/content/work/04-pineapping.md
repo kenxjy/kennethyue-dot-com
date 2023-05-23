@@ -2,7 +2,7 @@
 title: Pineapping
 pubDate: 2023-04-19
 # lastModified:
-# editorsNote: 
+# editorsNote:
 role: Full-Stack Developer
 startDate: 2022-04-02
 endDate: null
@@ -19,9 +19,10 @@ tags:
 ---
 
 ### Job Overview
-  - Regularly attend Stand-up Meetings
-  - Sprint planning and review
-  - Front-end Development with Angular 2+
-  - Back-end Development with ASP.NET and C#
-  - Configure Azure DevOps Pipelines
-  - Deploy releases 
+
+- Regularly attend Stand-up Meetings
+- Sprint planning and review
+- Front-end Development with Angular 2+
+- Back-end Development with ASP.NET and C#
+- Configure Azure DevOps Pipelines
+- Deploy releases

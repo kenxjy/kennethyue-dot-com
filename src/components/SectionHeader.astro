@@ -1,116 +1,62 @@
 ---
+import {
+  ItemsPositionClass,
+  FontSizeClass,
+  Screens,
+} from '../scripts/tailwindTypes';
+type FontSizes =
+  | `${FontSizeClass}`
+  | `${FontSizeClass} ${Screens}:${FontSizeClass}`;
+
 interface Props {
   title: string;
   tagline?: string;
   color?: string;
-  align?: 'start' | 'center';
-  titleFontSize?: string;
-  smTitleFontSize?: string;
-  taglineFontSize?: string;
-  smTaglineFontSize?: string;
+  lineColor?: string;
+  align?: ItemsPositionClass;
+  titleFontSize?: FontSizes;
+  taglineFontSize?: FontSizes;
+  maxWidth?: string;
 }
 
 const {
-  align = 'center',
-  tagline,
   title,
-  color = 'var(--gray-200)',
-  titleFontSize = 'var(--text-5xl)',
-  smTitleFontSize = 'var(--text-3xl)',
-  taglineFontSize = 'var(--text-xl)',
-  smTaglineFontSize = 'var(--text-lg)',
+  tagline,
+  align = 'items-center',
+  color = 'text-gray-700 dark:text-gray-200',
+  lineColor = 'bna:bg-gray-700 dark:bna:bg-gray-200',
+  titleFontSize = 'text-3xl md:text-5xl',
+  taglineFontSize = 'text-lg md:text-xl',
+  maxWidth,
 } = Astro.props;
+
+const lineAlignment: Record<ItemsPositionClass, string> = {
+  'items-center': 'max-md:after:right-[calc(50%-50px)]',
+  'items-start': 'max-md:after:left-0',
+  'items-end': 'max-md:after:right-0',
+};
 ---
 
-<header class:list={['stack section-header gap-4', align]}>
-  <div class="stack gap-2">
-    <h1 class="title">{title}</h1>
-    {tagline && <p class="tagline">{tagline}</p>}
+<header class:list={['flex flex-col text-center gap-4', align]}>
+  <div class:list={['flex flex-col gap-2', maxWidth]}>
+    <h1
+      class:list={[
+        'relative mx-auto my-6 break-words font-brand font-bold after:-bottom-2 after:w-[100px] bna:absolute bna:h-[1px] before:md:-top-3 before:md:left-0 after:md:-bottom-3 after:md:right-0 bna:md:w-7/12',
+        color,
+        titleFontSize,
+        lineColor,
+        lineAlignment[align],
+      ]}
+    >
+      {title}
+    </h1>
+    {
+      tagline && (
+        <p class:list={['mx-auto', color, taglineFontSize]}>{tagline}</p>
+      )
+    }
   </div>
   <slot />
 </header>
 
-<style define:vars={{ color, titleFontSize, smTitleFontSize, taglineFontSize, smTaglineFontSize }}>
-  .section-header {
-    text-align: center;
-  }
-
-  .title,
-  .tagline {
-    max-width: 37ch;
-    margin-inline: auto;
-    color: var(--color);
-  }
-
-  .start {
-    text-align: start;
-  }
-
-  .title {
-    width: max-content;
-    position: relative;
-    text-align: center;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    font-size: var(--smTitleFontSize);
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .tagline {
-    font-size: var(--smTaglineFontSize);
-  }
-
-  @media only screen and (min-width: 50em) {
-    .start {
-      text-align: start;
-    }
-
-    .start .title,
-    .start .tagline {
-      margin-inline: unset;
-    }
-
-    .title {
-      font-size: var(--titleFontSize);
-    }
-
-    .tagline {
-      font-size: var(--taglineFontSize);
-    }
-
-    .title::before,
-    .title::after {
-      background-color: var(--color);
-      content: ' ';
-      position: absolute;
-
-      width: 54%;
-      height: 1px;
-      display: inline-block;
-    }
-
-    .title::before {
-      top: -0.75rem;
-      left: 0%;
-    }
-
-    .title::after {
-      bottom: -0.75rem;
-      right: 0%;
-    }
-  }
-
-  @media only screen and (max-width: 50em) {
-    .title::before {
-      background-color: var(--color);
-      content: ' ';
-      position: absolute;
-      bottom: -0.5rem;
-      width: 100px;
-      height: 1px;
-      display: inline-block;
-      left: calc(50% - 50px);
-    }
-  }
-</style>
+<style></style>

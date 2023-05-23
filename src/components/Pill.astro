@@ -1,16 +1,7 @@
-<div class="pill"><slot /></div>
+<div
+  class="flex gap-2 whitespace-nowrap rounded-full border border-primary bg-primary px-4 py-2 text-md leading-snug text-gray-50"
+>
+  <slot />
+</div>
 
-<style>
-	.pill {
-		display: flex;
-		padding: 0.5rem 1rem;
-		gap: 0.5rem;
-		color: var(--accent-text-over);
-		border: 1px solid var(--accent-regular);
-		background-color: var(--accent-regular);
-		border-radius: 999rem;
-		font-size: var(--text-md);
-		line-height: 1.35;
-		white-space: nowrap;
-	}
-</style>
+<style></style>

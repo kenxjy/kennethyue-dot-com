@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "pluginSearchDirs": false,
+  "printWidth": 80,
+  "singleQuote": true
+}

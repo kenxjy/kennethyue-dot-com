@@ -1,35 +1,20 @@
 ---
+import { ItemsPositionClass } from '../scripts/tailwindTypes';
+
 interface Props {
   flex?: boolean;
-  align?: 'start' | 'center' | 'end';
+  align?: ItemsPositionClass;
 }
 
-const { flex = true, align = 'center' } = Astro.props;
-
-const classList = flex ? 'stack ' + align : '' 
-
+const { flex = true, align = 'items-center' } = Astro.props;
+let classList: [string, ItemsPositionClass] = null;
+if (flex) {
+  classList = ['flex flex-col', align];
+}
 ---
 
-<section class:list={['section']}>
-  <div class:list={['wrapper', classList]}>
-    <slot />
-  </div>
+<section class:list={['container md:px-12', classList]}>
+  <slot />
 </section>
 
-<style>
-  .section {
-    margin: 2rem 0;
-  }
-  
-  .start {
-    align-items: flex-start;
-  }
-
-  .center {
-    align-items: center;
-  }
-
-  .end {
-    align-items: flex-end;
-  }
-</style>
+<style></style>
