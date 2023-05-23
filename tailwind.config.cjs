@@ -2,36 +2,45 @@
 
 const plugin = require('tailwindcss/plugin');
 
+const darkModeClassName = '.theme-dark';
+
+const mainColors = {
+  primary: {
+    light: '#00A393',
+    DEFAULT: '#028EA1',
+    dark: '#05648A',
+  },
+  accent: {
+    dark: '#A12825',
+    DEFAULT: '#EF6F6C',
+    light: '#F7F9DD',
+  },
+  gray: {
+    50: '#FFFFFF',
+    100: '#F3F4F7',
+    200: '#E3E6EE',
+    300: '#C3CADB',
+    400: '#A3ACC8',
+    500: '#8490B5',
+    600: '#6474A2',
+    700: '#505D84',
+    800: '#3D4663',
+    900: '#283044',
+    950: '#141925',
+  },
+};
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  darkMode: ['class', '.theme-dark'],
+  darkMode: ['class', darkModeClassName],
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      primary: {
-        dark: '#03606D',
-        DEFAULT: '#10808F',
-        light: '#42B3C2',
-      },
-      accent: {
-        dark: '#DF4543',
-        DEFAULT: '#EF6F6C',
-        light: '#FF9A98',
-      },
-      gray: {
-        50: '#F8F9FA',
-        100: '#F2F4F6',
-        200: '#E9ECEF',
-        300: '#CED4DA',
-        400: '#ADB5BD',
-        500: '#6F7981',
-        600: '#4E555C',
-        700: '#3F454C',
-        800: '#2C3237',
-        900: '#1F2226',
-        950: '#0E0F11',
-      },
+      primary: mainColors.primary,
+      accent: mainColors.accent,
+      gray: mainColors.gray,
+      overlay: mainColors.gray[50],
     },
     fontFamily: {
       body: ['Figtree', 'san-serif'],
@@ -68,8 +77,21 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addUtilities }) => {
+    plugin(({ addBase, addUtilities, theme }) => {
       // Add your custom styles here
+      // addBase({
+      //   ':root': {
+      //     '--gradient-stop-1': theme('colors.primary.dark'),
+      //     '--gradient-stop-2': theme('colors.primary.DEFAULT'),
+      //     '--gradient-stop-3': theme('colors.primary.light'),
+      //   },
+      //   [`:root${darkModeClassName}`]: {
+      //     '--gradient-stop-1': theme('colors.accent.light'),
+      //     '--gradient-stop-2': theme('colors.primary.DEFAULT'),
+      //     '--gradient-stop-3': theme('colors.primary.light'),
+      //   },
+      // });
+
       addUtilities({
         '.xjy-transition': {
           '@apply duration-200 ease-in-out': {},

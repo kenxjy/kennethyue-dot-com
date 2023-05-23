@@ -27,7 +27,7 @@ const { showBackground = false } = Astro.props;
   class:list={[
     'z-50 relative mb-14 font-brand font-medium md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 md:px-20 md:py-10',
     showBackground
-      ? "bg-gradient-to-b from-gray-50 from-5% via-gray-50/50 via-40% to-transparent dark:from-gray-950 dark:via-gray-950/50 max-md:[&:has(button[aria-expanded='true'])]:bg-gray-50 max-md:dark:[&:has(button[aria-expanded='true'])]:bg-gray-950"
+      ? "bg-gradient-to-b from-gray-50 from-5% via-gray-50/50 via-55% to-transparent dark:from-gray-950 dark:via-gray-950/50 max-md:[&:has(button[aria-expanded='true'])]:bg-gray-50 max-md:dark:[&:has(button[aria-expanded='true'])]:bg-gray-950"
       : 'bg-gray-50 dark:bg-gray-950',
   ]}
 >
@@ -64,14 +64,13 @@ const { showBackground = false } = Astro.props;
         textLinks.map(({ label, href }) => (
           <li>
             <a
-              class="inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-gray-900 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100"
               aria-current={Astro.url.pathname === href}
               class:list={[
-                'inline-block md:rounded-full md:px-4 md:py-2 md:transition-colors md:xjy-transition hover:md:text-gray-900 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100',
+                'inline-block md:rounded-full md:px-4 md:py-2 ',
                 Astro.url.pathname === href ||
                 (href !== '/' && Astro.url.pathname.startsWith(href))
-                  ? 'text-gray-950 dark:text-gray-50 md:bg-primary'
-                  : 'text-gray-500 hover:md:bg-primary/20 focus:md:bg-primary/20',
+                  ? 'text-gray-950 dark:text-gray-50 md:text-overlay md:bg-primary'
+                  : 'text-gray-500 md:transition-colors md:xjy-transition hover:md:bg-primary/20 hover:md:text-gray-900 focus:md:bg-primary/20 focus:md:text-gray-900 hover:dark:md:text-gray-100 focus:dark:md:text-gray-100',
               ]}
               href={href}
             >
@@ -91,7 +90,7 @@ const { showBackground = false } = Astro.props;
           iconLinks.map(({ href, icon, label }) => (
             <a
               href={href}
-              class="flex p-2 text-xl text-primary-dark transition-colors xjy-transition hover:text-gray-950 focus:text-gray-950 dark:text-primary-light dark:hover:text-gray-50 dark:focus:text-gray-50 md:p-1.5"
+              class="flex p-2 text-xl text-primary transition-colors xjy-transition hover:text-gray-950 focus:text-gray-950 dark:hover:text-gray-50 dark:focus:text-gray-50 md:p-1.5"
             >
               <span class="sr-only">{label}</span>
               <Icon icon={icon} />
