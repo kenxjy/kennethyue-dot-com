@@ -58,7 +58,7 @@ module.exports = {
       '5xl': '4.5rem',
     },
     screens: {
-      md: '800px',
+      md: '900px',
       lg: '1328px',
     },
     container: {

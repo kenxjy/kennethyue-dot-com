@@ -135,7 +135,7 @@ const { showBackground = false } = Astro.props;
         setExpanded(e.matches);
         btn.hidden = e.matches;
       };
-      const mediaQueries = window.matchMedia('(min-width: 50em)');
+      const mediaQueries = window.matchMedia('(min-width: 900px)');
       handleViewports(mediaQueries);
       mediaQueries.addEventListener('change', handleViewports);
     }
